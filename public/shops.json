@@ -1,0 +1,179 @@
+[
+    {
+      "id": 1,
+      "category": "Mens",
+      "name": "Men's T-Shirt",
+      "image": "https://img.freepik.com/free-photo/man-with-sunglasses-wearing-white-t-shirt-posing_158538-16705.jpg?w=900&t=st=1690423239~exp=1690423839~hmac=07c0ff640a915b9634597001ef9a0d93ac0f13774ec7e41354c0e8dc48200a5c",
+      "description": "Comfortable and stylish t-shirt for men",
+      "price": 20.99,
+      "colors": ["white", "black", "blue"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.8
+    },
+    {
+      "id": 2,
+      "category": "Mens",
+      "name": "Men's Jeans",
+      "image": "https://img.freepik.com/free-photo/elegant-young-handsome-man-studio-fashion-portrait_1301-4506.jpg?w=996&t=st=1690422350~exp=1690422950~hmac=9ca921e81bbc1ce322a8990023d157b6b3375ca771931c912fbc7ecf6deb6ded",
+      "description": "Classic fit denim jeans for men",
+      "price": 34.99,
+      "colors": ["blue", "black", "grey"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.6
+    },
+    {
+      "id": 3,
+      "category": "Mens",
+      "name": "Men's Dress Shirt",
+      "image": "https://img.freepik.com/free-photo/portrait-handsome-smiling-stylish-young-man-model-dressed-red-checkered-shirt-fashion-man-posing_158538-4909.jpg?w=900&t=st=1690422007~exp=1690422607~hmac=60f5ed46a88b51581a88a9d6dc1f3c7b98b78e01d2b9d728bd973e76c934ae0f",
+      "description": "Formal dress shirt for men",
+      "price": 27.5,
+      "colors": ["white", "light blue", "pink"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.9
+    },
+    {
+      "id": 4,
+      "category": "Mens",
+      "name": "Men's Hoodie",
+      "image": "https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=996&t=st=1690422075~exp=1690422675~hmac=73dfe7b302b6297c3d173f71cd0f2e854caadf3748072c1331c452741f2e5d86",
+      "description": "Warm and stylish hoodie for men",
+      "price": 39.99,
+      "colors": ["black", "grey", "navy"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.7
+    },
+    {
+      "id": 5,
+      "category": "Mens",
+      "name": "Men's Polo Shirt",
+      "image": "https://img.freepik.com/free-photo/handsome-man-white-shirt-black-trousers-posing-attractive-guy-with-fashion-hairstyle-confident-man-with-short-beard-adult-stylish-boy-with-brown-hair_186202-8539.jpg?w=900&t=st=1690422122~exp=1690422722~hmac=48aa6281df5b075aab86948934264dd1ce2dc8049fd3fe54b25ef50f8c8aa969",
+      "description": "Classic polo shirt for men",
+      "price": 24.99,
+      "colors": ["white", "blue", "green"],
+      "sizes": ["M", "L", "XL", "XXL"],
+      "ratings": 4.5
+    },
+    {
+      "id": 6,
+      "category": "Mens",
+      "name": "Men's Chinos",
+      "image": "https://img.freepik.com/free-photo/young-hispanic-male-model-wearing-blue-shirt-black-jacket-posing-near-stone-wall_181624-44616.jpg?w=996&t=st=1690422211~exp=1690422811~hmac=9f830ff03417da4f79e879309220b2c961018028e2aa30ee7d05e9c98eda990d",
+      "description": "Casual chino pants for men",
+      "price": 29.99,
+      "colors": ["khaki", "olive", "navy"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.6
+    },
+    {
+      "id": 7,
+      "category": "Womens",
+      "name": "Women's Sweater",
+      "image": "https://img.freepik.com/free-photo/attractive-young-smiling-stylish-woman-pink-sweater-feeling-comfortable-casual-style-posing-isolated-winter-fashion-trend_285396-906.jpg?w=996&t=st=1690422394~exp=1690422994~hmac=63136e78a369aa6055de41f66c75571f18e5e3ad2fbadb526659974693545b44",
+      "description": "Soft and cozy sweater for women",
+      "price": 34.99,
+      "colors": ["pink", "beige", "grey"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.8
+    },
+    {
+      "id": 8,
+      "category": "Womens",
+      "name": "Women's Skirt",
+      "image": "https://img.freepik.com/free-photo/beautiful-cute-brunette-model-casual-summer-clothes-with-no-makeup_158538-10648.jpg?w=826&t=st=1690422536~exp=1690423136~hmac=33c1217652eb3d2f7e627e687fcacd51bea77204b81bb69000e388de2024c9a7",
+      "description": "Floral-printed skirt for women",
+      "price": 29.99,
+      "colors": ["blue", "green", "yellow"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.5
+    },
+    {
+      "id": 9,
+      "category": "Womens",
+      "name": "Women's Dress",
+      "image": "https://img.freepik.com/free-photo/beautiful-young-woman-wearing-hat-posing_171337-18893.jpg?w=996&t=st=1690422546~exp=1690423146~hmac=2f1355f2f88ad5778c49559279dc73b42e39b146e01dd2da472148d22497445e",
+      "description": "Stylish and comfortable dress for women",
+      "price": 39.99,
+      "colors": ["red", "black", "purple"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.8
+    },
+    {
+      "id": 10,
+      "category": "Womens",
+      "name": "Women's Blazer",
+      "image": "https://img.freepik.com/free-photo/high-fashion-portrait-young-beautiful-brunette-woman-wearing-nice-trendy-blue-suit-sexy-fashion-model-posing-studio-fashionable-female-isolated-light-pink_158538-22172.jpg?w=360&t=st=1690422728~exp=1690423328~hmac=393e1f118da91c5334ad820b25a74d53ecf4fffe9d9e1af21200a22b733cd95f",
+      "description": "Elegant blazer for women",
+      "price": 49.99,
+      "colors": ["black", "navy", "grey"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.7
+    },
+    {
+      "id": 11,
+      "category": "Womens",
+      "name": "Women's Jeans",
+      "image": "https://img.freepik.com/free-photo/low-angle-female-with-sunglasses_23-2148348911.jpg?w=996&t=st=1690422787~exp=1690423387~hmac=80bb9111caf1bb05711422341e9b53d9ce673e659d66cf8f32adb1679fb12358",
+      "description": "Stretchy skinny jeans for women",
+      "price": 39.99,
+      "colors": ["blue", "black", "white"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.6
+    },
+    {
+      "id": 12,
+      "category": "Kids",
+      "name": "Kids' T-Shirt",
+      "image": "https://img.freepik.com/free-photo/front-view-smiling-cute-kid-white-t-shirt-holding-skateboard-blue-floor_179666-1166.jpg?w=996&t=st=1690422877~exp=1690423477~hmac=3ca45c92d95ea9587d6dcef81787042f2fc38f44b21e12258939670f3db8b8d2",
+      "description": "Cute and playful t-shirt for kids",
+      "price": 12.99,
+      "colors": ["blue", "pink", "green", "yellow"],
+      "sizes": ["S", "M", "L", "XL"],
+      "ratings": 4.4
+    },
+    {
+      "id": 13,
+      "category": "Kids",
+      "name": "Kids' Shorts",
+      "image": "https://img.freepik.com/free-photo/girl-wearing-yellow-sleeveless-jumpsuit_53876-97010.jpg?w=360&t=st=1690422959~exp=1690423559~hmac=5c090ba10e1bbd6c809acd913e33b5ff97dd9264d8a136184ce0dba8172f669f",
+      "description": "Comfortable shorts for kids",
+      "price": 15.99,
+      "colors": ["red", "orange", "blue"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.3
+    },
+    {
+      "id": 14,
+      "category": "Kids",
+      "name": "Kids' Dress",
+      "image": "https://as2.ftcdn.net/v2/jpg/00/83/32/95/1000_F_83329540_dPyhxNivkkP2o237DWZP50bbWM3m2BgV.jpg",
+      "description": "Adorable dress for kids",
+      "price": 18.99,
+      "colors": ["pink", "purple", "yellow"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.6
+    },
+    {
+      "id": 15,
+      "category": "Kids",
+      "name": "Kids' Sweatshirt",
+      "image": "https://img.freepik.com/free-photo/portrait-cute-little-boy-girl-stylish-jeans-clothes-posing_155003-10100.jpg?w=360&t=st=1690423114~exp=1690423714~hmac=06c787bd40e982a34a952ba0f24025fa194b68202bba5bf8326945294c7f7a4f",
+      "description": "Comfortable sweatshirt for kids",
+      "price": 19.99,
+      "colors": ["red", "blue", "grey"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.5
+    },
+    {
+      "id": 16,
+      "category": "Kids",
+      "name": "Kids' Joggers",
+      "image": "https://img.freepik.com/free-photo/full-shot-girl-wearing-sunglasses_23-2149067153.jpg?w=360&t=st=1690423177~exp=1690423777~hmac=c07973e0e58827d071650470863e3d462fa753a5c3cc9289e90bfcfb60bd3b6e",
+      "description": "Sporty jogger pants for kids",
+      "price": 24.99,
+      "colors": ["black", "navy", "green"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.4
+    }
+  ]
+  

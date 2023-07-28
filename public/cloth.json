@@ -1,0 +1,174 @@
+[
+  {
+    "mens": [
+      {
+        "id": 1,
+        "category": "mens",
+        "name": "Men's T-Shirt",
+        "description": "Comfortable and stylish t-shirt for men",
+        "price": 20.99,
+        "colors": ["white", "black", "blue"],
+        "sizes": ["S", "M", "L", "XL"],
+        "ratings": 4.8
+      },
+      {
+        "id": 2,
+        "category": "mens",
+        "name": "Men's Jeans",
+        "description": "Classic fit denim jeans for men",
+        "price": 34.99,
+        "colors": ["blue", "black", "grey"],
+        "sizes": ["30x32", "32x32", "34x32", "36x32"],
+        "ratings": 4.6
+      },
+      {
+        "id": 3,
+        "category": "mens",
+        "name": "Men's Dress Shirt",
+        "description": "Formal dress shirt for men",
+        "price": 27.5,
+        "colors": ["white", "light blue", "pink"],
+        "sizes": ["S", "M", "L", "XL"],
+        "ratings": 4.9
+      },
+      {
+        "id": 4,
+        "category": "mens",
+        "name": "Men's Hoodie",
+        "description": "Warm and stylish hoodie for men",
+        "price": 39.99,
+        "colors": ["black", "grey", "navy"],
+        "sizes": ["S", "M", "L", "XL"],
+        "ratings": 4.7
+      },
+      {
+        "id": 5,
+        "category": "mens",
+        "name": "Men's Polo Shirt",
+        "description": "Classic polo shirt for men",
+        "price": 24.99,
+        "colors": ["white", "blue", "green"],
+        "sizes": ["M", "L", "XL", "XXL"],
+        "ratings": 4.5
+      },
+      {
+        "id": 6,
+        "category": "mens",
+        "name": "Men's Chinos",
+        "description": "Casual chino pants for men",
+        "price": 29.99,
+        "colors": ["khaki", "olive", "navy"],
+        "sizes": ["30x32", "32x32", "34x32", "36x32"],
+        "ratings": 4.6
+      }
+    ]
+  },
+ {
+  "womens": [
+    {
+      "id": 7,
+      "category": "womens",
+      "name": "Women's Sweater",
+      "description": "Soft and cozy sweater for women",
+      "price": 34.99,
+      "colors": ["pink", "beige", "grey"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.8
+    },
+    {
+      "id": 8,
+      "category": "womens",
+      "name": "Women's Skirt",
+      "description": "Floral-printed skirt for women",
+      "price": 29.99,
+      "colors": ["blue", "green", "yellow"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.5
+    },
+    {
+      "id": 9,
+      "category": "womens",
+      "name": "Women's Dress",
+      "description": "Stylish and comfortable dress for women",
+      "price": 39.99,
+      "colors": ["red", "black", "purple"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.8
+    },
+    {
+      "id": 10,
+      "category": "womens",
+      "name": "Women's Blazer",
+      "description": "Elegant blazer for women",
+      "price": 49.99,
+      "colors": ["black", "navy", "grey"],
+      "sizes": ["S", "M", "L"],
+      "ratings": 4.7
+    },
+    {
+      "id": 11,
+      "category": "womens",
+      "name": "Women's Jeans",
+      "description": "Stretchy skinny jeans for women",
+      "price": 39.99,
+      "colors": ["blue", "black", "white"],
+      "sizes": ["26", "28", "30", "32"],
+      "ratings": 4.6
+    }
+  ]
+ },
+  {
+    "kids": [
+      {
+        "id": 12,
+        "category": "kids",
+        "name": "Kids' T-Shirt",
+        "description": "Cute and playful t-shirt for kids",
+        "price": 12.99,
+        "colors": ["blue", "pink", "green", "yellow"],
+        "sizes": ["2T", "3T", "4T", "5T"],
+        "ratings": 4.4
+      },
+      {
+        "id": 13,
+        "category": "kids",
+        "name": "Kids' Shorts",
+        "description": "Comfortable shorts for kids",
+        "price": 15.99,
+        "colors": ["red", "orange", "blue"],
+        "sizes": ["2T", "3T", "4T", "5T"],
+        "ratings": 4.3
+      },
+      {
+        "id": 14,
+        "category": "kids",
+        "name": "Kids' Dress",
+        "description": "Adorable dress for kids",
+        "price": 18.99,
+        "colors": ["pink", "purple", "yellow"],
+        "sizes": ["2T", "3T", "4T", "5T"],
+        "ratings": 4.6
+      },
+      {
+        "id": 15,
+        "category": "kids",
+        "name": "Kids' Sweatshirt",
+        "description": "Comfortable sweatshirt for kids",
+        "price": 19.99,
+        "colors": ["red", "blue", "grey"],
+        "sizes": ["2T", "3T", "4T", "5T"],
+        "ratings": 4.5
+      },
+      {
+        "id": 16,
+        "category": "kids",
+        "name": "Kids' Joggers",
+        "description": "Sporty jogger pants for kids",
+        "price": 24.99,
+        "colors": ["black", "navy", "green"],
+        "sizes": ["2T", "3T", "4T", "5T"],
+        "ratings": 4.4
+      }
+    ]
+  }
+]
