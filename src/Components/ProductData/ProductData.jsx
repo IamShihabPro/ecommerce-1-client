@@ -51,7 +51,7 @@ const ProductData = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
                 {
-                    filterProduct.map(product =>(
+                    filterProduct.slice(0,15).map(product =>(
 
                         <div  key={product.id} className='col-span-1 cursor-pointer group bg-slate-100 rounded-md p-2'>
                         <div className='flex flex-col gap-2 w-full'>
