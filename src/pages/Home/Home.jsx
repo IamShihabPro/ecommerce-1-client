@@ -1,7 +1,8 @@
 import React from 'react';
-import Categories from '../../Components/Categories/Categories';
-import Cloths from '../../Components/Cloths/Cloths';
-import ProductList from '../../Components/ProductList/ProductList';
+import ProductData from '../../Components/ProductData/ProductData';
+// import Categories from '../../Components/Categories/Categories';
+// import Cloths from '../../Components/Cloths/Cloths';
+// import ProductList from '../../Components/ProductList/ProductList';
 
 const Home = () => {
     return (
@@ -10,7 +11,9 @@ const Home = () => {
                 <Categories></Categories>
                 <Cloths></Cloths>
             </div> */}
-                <ProductList></ProductList>
+                {/* <ProductList></ProductList> */}
+
+                <ProductData></ProductData>
         </div>
     );
 };
