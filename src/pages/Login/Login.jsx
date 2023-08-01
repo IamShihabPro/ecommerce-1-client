@@ -1,8 +1,56 @@
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
+import { useContext, useRef } from 'react'
+import { AuthContext } from '../../Provider/AuthProvider'
+import { TbFidgetSpinner }  from 'react-icons/tb'
 
 const Login = () => {
+    const {signIn,setLoading, loading, signInWithGoogle, resetPassword} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const emailRes = useRef()
+
+
+    // handle submit
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value
+        const password = form.password.value
+
+        signIn(email, password)
+        .then(res =>{   
+            console.log(res.user);
+            navigate('/')
+        })
+        .cath(err =>{
+            setLoading(false)
+            console.log(err.message);
+            toast.error(err.message)
+            
+        })
+    }
+
+    // handle google login 
+    const handleGoogleLogin = () =>{
+        signInWithGoogle()
+        .then(res =>{   
+            console.log(res.user);
+            navigate('/')
+        })
+        .cath(err =>{
+            setLoading(false)
+            console.log(err.message);
+            toast.error(err.message)
+            
+        })
+    }
+
+    // forget password reset
+    const handlePasswordReset = () =>{
+        resetPassword(email)
+    }
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
@@ -13,6 +61,7 @@ const Login = () => {
           </p>
         </div>
         <form
+        onSubmit={handleSubmit}
           noValidate=''
           action=''
           className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -23,6 +72,7 @@ const Login = () => {
                 Email address
               </label>
               <input
+                ref={emailRes}
                 type='email'
                 name='email'
                 id='email'
@@ -54,7 +104,10 @@ const Login = () => {
               type='submit'
               className='bg-rose-500 w-full rounded-md py-3 text-white'
             >
-              Continue
+                {
+                    loading? <TbFidgetSpinner className='m-auto animate-spin' size={24}></TbFidgetSpinner> : 'Continue'
+                }
+              
             </button>
           </div>
         </form>
@@ -70,8 +123,8 @@ const Login = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
-          <FcGoogle size={32} />
+        <div onClick={handleGoogleLogin} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+          <FcGoogle className='animate-bounce' size={32} />
 
           <p>Continue with Google</p>
         </div>
