@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom'
-
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
+import { useContext, useRef } from 'react'
+import { AuthContext } from '../../Provider/AuthProvider'
+import { TbFidgetSpinner }  from 'react-icons/tb'
 
 const SignUp = () => {
+    const {signIn,setLoading, loading, signInWithGoogle, updateUserProfile, createUser } = useContext(AuthContext)
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
