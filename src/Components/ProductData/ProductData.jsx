@@ -32,7 +32,7 @@ const ProductData = () => {
             setProducts(data)
         })
     },[])
-    console.log(products);
+    // console.log(products);
 
     const filterProduct = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory)
     console.log(filterProduct);
@@ -53,7 +53,7 @@ const ProductData = () => {
                 {
                     filterProduct.slice(0,15).map(product =>(
 
-                        <div  key={product.id} className='col-span-1 cursor-pointer group bg-slate-100 rounded-md p-2'>
+                        <div  key={product.id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2'>
                         <div className='flex flex-col gap-2 w-full'>
                         <div className=' aspect-square w-full relative overflow-hidden rounded-md'>
                             <img className=' object-cover h-full w-full group-hover:scale-110 transition'
