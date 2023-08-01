@@ -9,7 +9,7 @@ const Login = () => {
     const {signIn,setLoading, loading, signInWithGoogle, resetPassword} = useContext(AuthContext)
     const navigate = useNavigate()
     const emailRef = useRef()
-    const location = useLocation
+    const location = useLocation()
     const from = location.state?.from?.pathname || '/'
 
 
@@ -25,7 +25,7 @@ const Login = () => {
             console.log(res.user);
             navigate(from, {replace: true})
         })
-        .cath(err =>{
+        .catch(err =>{
             setLoading(false)
             console.log(err.message);
             toast.error(err.message)
@@ -40,7 +40,7 @@ const Login = () => {
             console.log(res.user);
             navigate(from, {replace: true})
         })
-        .cath(err =>{
+        .catch(err =>{
             setLoading(false)
             console.log(err.message);
             toast.error(err.message)
@@ -56,7 +56,7 @@ const Login = () => {
             toast.success('Please check your email')
             setLoading(false)
         })
-        .cath(err =>{
+        .catch(err =>{
             setLoading(false)
             console.log(err.message);
             toast.error(err.message)
@@ -137,7 +137,7 @@ const Login = () => {
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
         <div onClick={handleGoogleLogin} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
-          <FcGoogle className='animate-bounce' size={32} />
+          <FcGoogle className='' size={32} />
 
           <p>Continue with Google</p>
         </div>
