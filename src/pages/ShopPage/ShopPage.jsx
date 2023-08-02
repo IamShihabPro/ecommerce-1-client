@@ -67,7 +67,7 @@ const ShopPage = () => {
     return (
         <Container>
             
-
+            <h2 className='text-gray-700 text-center text-3xl font-medium my-3'>Shop By Category</h2>
             {/* shop page wrapper */}
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 pt-4 pb-16'>
                 
@@ -95,7 +95,7 @@ const ShopPage = () => {
 
                              {/* Price Range Filter */}
                                 <div className="flex flex-col gap-6 items-center">
-                                <label className="mr-2 mt-4">Price Range:</label>
+                                <label className="mr-2 mt-4 font-medium">Price Range:</label>
                                 <div className=''>
                                     <span>${minPriceFilter}</span>
                                     <input
