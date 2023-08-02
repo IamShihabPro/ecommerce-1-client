@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { FaHome } from 'react-icons/fa';
-import { BsChevronRight } from 'react-icons/bs';
 
 import Container from '../../Components/Container/Container';
 import ShopCard from './ShopCard';
@@ -68,14 +66,7 @@ const ShopPage = () => {
 
     return (
         <Container>
-            {/* <div className='py-4 flex items-center gap-3'>
-                <a href="" className='text-red-600 text-base'>
-                    <FaHome></FaHome>
-                </a>
-                <span className='text-sm text-gray-400'> <BsChevronRight></BsChevronRight> </span>
-                <p className='text-gray-600 font-medium'>Shop</p>
-
-            </div> */}
+            
 
             {/* shop page wrapper */}
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 pt-4 pb-16'>
