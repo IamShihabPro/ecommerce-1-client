@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Nabvbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logOut} = useContext(AuthContext)
+
 
 
   const navItems = [
@@ -21,17 +24,19 @@ const Nabvbar = () => {
         id: 3,
         link: '/contact',
         title: 'Contact'
-    },
-    {
-        id: 4,
-        link: '/login',
-        title: 'Login'
-    },
+    }
 ]
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleLogOut = () =>{
+    logOut()
+    .then(()=>{})
+    .catch(err => console.log(err) )
+  }
+
 
   return (
     <nav className="bg-gray-100 fixed top-0 inset-x-0 z-50">
@@ -49,6 +54,14 @@ const Nabvbar = () => {
                                 {title}
                                 </Link>
                             ))
+                        }
+
+                        {
+                            user ? <> 
+                            <Link  onClick={handleLogOut} className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium ">Logout</Link>       
+                             </> : <> <Link to='/login' className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium "> Login </Link> </>
+
+                             
                         }
 
                        

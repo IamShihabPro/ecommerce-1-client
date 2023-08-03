@@ -5,7 +5,9 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ProductView from "../Components/ProductView/ProductView";
 import MultiFilter from "../Components/Com/MultiFilter";
-import ShopPage from "../pages/ShopPage/ShopPage";
+import ProductData from "../Components/ProductData/ProductData";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+
 
 export const router = createBrowserRouter([
   {
@@ -25,16 +27,17 @@ export const router = createBrowserRouter([
         element: <SignUp/>
       },
       {
-        path: '/productview',
-        element: <ProductView/>
-      },
-      {
         path: '/multi',
         element: <MultiFilter/>
       },
       {
         path: '/shop',
-        element: <ShopPage/>
+        element: <ProductData></ProductData>
+      },
+      {
+        path: '/productview/:id',
+        element: <PrivateRoutes> <ProductView></ProductView> </PrivateRoutes> ,
+        loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/products/${params.id}`)
       },
     ]
   },

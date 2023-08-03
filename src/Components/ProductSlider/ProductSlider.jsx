@@ -11,7 +11,7 @@ const ProductSlider = () => {
     const [kidsProducts, setKidsProducts] = useState('Kids')
 
     useEffect(()=>{
-        fetch('shops.json')
+        fetch(`${import.meta.env.VITE_API_URL}/products`)
         .then(res => res.json())
         .then(data =>{
             setProductSlider(data)
@@ -33,17 +33,17 @@ const ProductSlider = () => {
         <Container>
              <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Mens Feshion</h2>
             <div className="flex overflow-x-auto my-4">
-                {mensfilterSlider.map((product) => <Card key={product.id} product={product}></Card> )}
+                {mensfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
 
              <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Womens Feshion</h2>
             <div className="flex overflow-x-auto my-4">
-                {womensfilterSlider.map((product) => <Card key={product.id} product={product}></Card> )}
+                {womensfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
 
              <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Kids Feshion</h2>
             <div className="flex overflow-x-auto my-4">
-                {kidsfilterSlider.map((product) => <Card key={product.id} product={product}></Card> )}
+                {kidsfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
                     
         </Container>

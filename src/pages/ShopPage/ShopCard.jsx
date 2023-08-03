@@ -2,11 +2,12 @@ import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ShopCard = ({product}) => {
     return (
         <>
-        <div  key={product.id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2 my-2 mx-3'>
+        <div  key={product._id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2 my-2 mx-3'>
                         <div className='flex flex-col gap-2 w-full'>
                             <div className=' aspect-square w-full relative overflow-hidden rounded-md'>
                                 <img className=' object-cover h-full w-full group-hover:scale-110 transition'
@@ -33,7 +34,8 @@ const ShopCard = ({product}) => {
 
                             <div className='flex justify-between items-center mt-1'>
                                 <button className="btn btn-outline">Add to card</button>
-                                <button className="btn "><FaEye></FaEye></button>
+                                <Link  to={`/productview/${product._id}`}> <button className="btn "> <FaEye></FaEye>  </button> </Link>
+                                
                             </div>
                         </div>
                     </div>
