@@ -59,11 +59,18 @@ const Nabvbar = () => {
                             ))
                         }
 
-                        <span className='relative'>
+                        {
+                            user&& <>
+                                <Link to='/cart' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center"> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
+                                <Link to='/dashboard/mycart' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium px-3">Dashboard</Link> 
+                            </>  
+                        }
+
+                        {/* <span className='relative'>
                                 <Link className="absolute -mt-5 -ml-8 p-5 text-gray-600 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md font-medium text-base">
                                     <FaShoppingCart className='w-10'></FaShoppingCart> <sup className='absolute mt-2 ml-5'> +{cart?.length || 0} </sup>
                                 </Link>
-                        </span>
+                        </span> */}
 
 
                         {
@@ -96,17 +103,24 @@ const Nabvbar = () => {
                 <div>
                     {
                         navItems.map(({id, link, title})=>(
-                            <Link to={link} key={id} className="block text-sky-400 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+                            <Link to={link} key={id} className="block text-sky-400 hover:text-white px-3 py-3 rounded-md text-base font-medium">
                             {title}
                             </Link> 
                         ))
                     }
 
-                        <span className='relative ml-3'>
+                        {
+                            user&& <>
+                                <Link to='/cart' className="text-sky-400 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center py-3 "> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
+                                <Link to='/dashboard/mycart' className="text-sky-400 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium py-3 ">Dashboard</Link> 
+                            </>  
+                        }
+
+                        {/* <span className='relative ml-3'>
                                 <Link className="absolute -mt-1 -mr-5 p-5 block text-sky-400 hover:text-white px-3 py-2 rounded-md text-base font-medium">
                                     <FaShoppingCart> </FaShoppingCart> <sup className='absolute mt-2 ml-5'> +{cart?.length || 0} </sup>
                                 </Link>
-                        </span>
+                        </span> */}
 
                     {
                             user ? <> 
