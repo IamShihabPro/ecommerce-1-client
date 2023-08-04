@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useCart from '../../hooks/useCart';
 
 const Nabvbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logOut} = useContext(AuthContext)
 
+    const [cart] = useCart()
 
+    console.log(cart.length);
 
   const navItems = [
     {
@@ -56,10 +59,17 @@ const Nabvbar = () => {
                             ))
                         }
 
+                        <span className='relative'>
+                                <Link className="absolute -mt-5 -ml-8 p-5 text-gray-600 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md font-medium text-base">
+                                    <FaShoppingCart className='w-10'></FaShoppingCart> <sup className='absolute mt-2 ml-5'> +{cart?.length || 0} </sup>
+                                </Link>
+                        </span>
+
+
                         {
                             user ? <> 
-                            <Link  onClick={handleLogOut} className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium ">Logout</Link>       
-                             </> : <> <Link to='/login' className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium "> Login </Link> </>
+                            <Link  onClick={handleLogOut} className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium ml-2">Logout</Link>       
+                             </> : <> <Link to='/login' className="text-red-500 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md text-sm font-medium ml-4"> Login </Link> </>
 
                              
                         }
@@ -90,6 +100,20 @@ const Nabvbar = () => {
                             {title}
                             </Link> 
                         ))
+                    }
+
+                        <span className='relative ml-3'>
+                                <Link className="absolute -mt-1 -mr-5 p-5 block text-sky-400 hover:text-white px-3 py-2 rounded-md text-base font-medium">
+                                    <FaShoppingCart> </FaShoppingCart> <sup className='absolute mt-2 ml-5'> +{cart?.length || 0} </sup>
+                                </Link>
+                        </span>
+
+                    {
+                            user ? <> 
+                            <Link  onClick={handleLogOut} className="block text-sky-400 hover:text-white px-3 py-2 rounded-md text-base font-medium ">Logout</Link>       
+                             </> : <> <Link to='/login' className="block text-sky-400 hover:text-white px-3 py-2 rounded-md text-base font-medium "> Login </Link> </>
+
+                             
                     }
                 </div>
 

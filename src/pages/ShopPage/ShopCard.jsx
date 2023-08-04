@@ -5,12 +5,15 @@ import { FaEye } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useCart from '../../hooks/useCart';
 
 const ShopCard = ({product}) => {
     const {_id, name, image, description, price, category, sizes, colors, ratings} = product
     const {user} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+
+    const [refetch, isLoading] = useCart()
 
     const handleAddToCart = product =>{
         console.log(product);
@@ -25,6 +28,7 @@ const ShopCard = ({product}) => {
             .then(res => res.json())
             .then(data =>{
                 if(data.insertedId){
+                    isLoading()
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -32,6 +36,7 @@ const ShopCard = ({product}) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
+                      refetch()
                 }
             })
         }
