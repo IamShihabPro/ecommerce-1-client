@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaSitemap, FaUsers } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 import Loader from '../Components/Loader/Loader';
 
 const Dashboard = () => {
   const {user, loading} = useContext(AuthContext)
+
+  const isAdmin = true
   
   if(loading){
     return <Loader></Loader>
@@ -36,11 +38,32 @@ const Dashboard = () => {
       </div>
 
       {/* Sidebar content here */}
-      <li className='cursor-pointer'><NavLink to='/dashboard' className={({ isActive }) => (isActive ? 'active' : 'default') } ><FaHome></FaHome> User Home </NavLink></li>
-      <li className=''><NavLink to='/dashboard/booking' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaCalendarAlt></FaCalendarAlt> Bookings </NavLink></li>
-      <li className=''><NavLink to='/dashboard/mycart' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> My Cart  </NavLink></li>
-      <li className=''><NavLink to='/dashboard/payment' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Payment History </NavLink></li>
 
+      {
+        isAdmin ? <>
+
+            <li className='cursor-pointer'><NavLink to='/dashboard/adminhome' className={({ isActive }) => (isActive ? 'active' : 'default') } ><FaHome></FaHome> Admin Home </NavLink></li>
+            <li className=''><NavLink to='/dashboard/additem' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaSitemap></FaSitemap> Add Product </NavLink></li>
+            <li className=''><NavLink to='/dashboard/manageproduct' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> Manage Product </NavLink></li>
+            <li className=''><NavLink to='/dashboard/manageorder' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Manage Order </NavLink></li>
+            <li className=''><NavLink to='/dashboard/allusers' className={({ isActive }) => (isActive ? 'active' : 'default')}> <FaUsers></FaUsers> All Users </NavLink></li>
+
+        
+         </> :
+
+        <>
+
+            <li className='cursor-pointer'><NavLink to='/dashboard/userhome' className={({ isActive }) => (isActive ? 'active' : 'default') } ><FaHome></FaHome> User Home </NavLink></li>
+            <li className=''><NavLink to='/dashboard/booking' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaCalendarAlt></FaCalendarAlt> Bookings </NavLink></li>
+            <li className=''><NavLink to='/dashboard/mycart' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> My Cart  </NavLink></li>
+            <li className=''><NavLink to='/dashboard/payment' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Payment History </NavLink></li>
+
+        
+        </>
+
+      }
+
+      
      <hr className='w-full my-2 bg-white' />
      <li className=''><NavLink to='/' className='text-white hover:text-blue-600'><FaHome></FaHome> Home </NavLink></li>
     </ul>
