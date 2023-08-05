@@ -19,7 +19,7 @@ const ShopCard = ({product}) => {
         console.log(product);
 
         if(user && user.email){
-            const orderProduct = {productId : _id, name, category, price, description, sizes, colors, ratings, email: user.email}
+            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings, email: user.email}
             fetch(`${import.meta.env.VITE_API_URL}/carts`,{
                 method:"POST",
                 headers:{'content-type': 'application/json'},
