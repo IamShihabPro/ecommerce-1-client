@@ -1,6 +1,6 @@
 import React from 'react';
 import useCart from '../../../hooks/useCart';
-
+import { FaTrashAlt } from 'react-icons/fa';
 const MyCart = () => {
     const [cart] = useCart()
     console.log(cart);
@@ -13,7 +13,7 @@ const MyCart = () => {
                 <h3>Total Price: ${total}</h3>
                 <button className='btn bg-blue-600 text-white hover:bg-green-600 btn-sm'>Payment</button>
             </div>
-            <hr className='w-full h-1 my-2 bg-gray-800' />
+            <hr className='w-full h-1 my-2 bg-gray-700' />
 
             <div className="overflow-x-auto">
                 <table className="table bg-slate-100 rounded-none">
@@ -21,7 +21,8 @@ const MyCart = () => {
                     <thead className='bg-blue-600 text-white'>
                     <tr>
                         <th> # </th>
-                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Product</th>
                         <th>Category</th>
                         <th>Price</th>
                         <th>Action</th>
@@ -40,24 +41,22 @@ const MyCart = () => {
                                 <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src={data.image} alt="Avatar Tailwind CSS Component" />
+                                    <div className="mask rounded w-12 h-12 ">
+                                        <img src={data.image} alt={data.name}  />
                                     </div>
                                     </div>
-                                    <div>
-                                    <div className="font-bold">Hart Hagerty</div>
-                                    <div className="text-sm opacity-50">United States</div>
-                                    </div>
+                                    {/* <div>
+                                    <div className="font-bold">{data.name}</div>
+                                    </div> */}
                                 </div>
                                 </td>
                                 <td>
-                                {data.name}
-                                <br/>
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                <div className="font-bold">{data.name}</div>
                                 </td>
-                                <td>Purple</td>
+                                <td> {data.category} </td>
+                                <td>$ {data.price}</td>
                                 <td>
-                                <button className="btn btn-ghost btn-xs">details</button>
+                                <button className="btn btn-ghost rounded-sm btn-xs bg-red-600 text-white hover:bg-red-600"> <FaTrashAlt></FaTrashAlt> </button>
                                 </td>
                             </tr>
 
