@@ -86,6 +86,22 @@ const SignUp = () => {
             signInWithGoogle()
             .then(res =>{   
                 console.log(res.user);
+
+                const saveUser = {name: res.user.displayName, email: res.user.email }
+                  fetch(`${import.meta.env.VITE_API_URL}/users`,{
+                    method: "POST",
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(saveUser)
+                  })
+                  .then(res => res.json())
+                  .then(data =>{
+                    if(data.insertedId){
+                      toast.success('Sign up successfull')
+                      navigate(from, {replace: true})
+                    }
+                  })
+
+
                 navigate(from, {replace: true})
             })
             .cath(err =>{
