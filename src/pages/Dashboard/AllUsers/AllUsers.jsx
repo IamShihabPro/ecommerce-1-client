@@ -39,6 +39,26 @@ const AllUsers = () => {
           })
     }
 
+    const handleAdmin = user =>{
+        fetch(`${import.meta.env.VITE_API_URL}/users/admin/${user._id}`,{
+            method: "PATCH",
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            refetch()
+            if(data.modifiedCount){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is admin now`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
 
     return (
         <div className='w-8/12 p-2 sm:p-4 md:p-8 lg:p-10 xl:p-12'>
@@ -76,8 +96,8 @@ const AllUsers = () => {
                                 
                                 <td>
                                     {
-                                        user.role === 'admin' ?  <button  className="btn btn-ghost rounded-sm btn-sm bg-green-600 text-white hover:bg-green-600"> <FaUserSecret></FaUserSecret> </button> :
-                                        <button  className="btn btn-ghost rounded-sm btn-sm bg-blue-600 text-white hover:bg-blue-600"> <FaUsers></FaUsers> </button>
+                                        user.role === 'admin' ?  <button onClick={()=> handleAdmin(user)} className="btn btn-ghost rounded-sm btn-sm bg-green-600 text-white hover:bg-green-600"> <FaUserSecret></FaUserSecret> </button> :
+                                        <button onClick={()=> handleAdmin(user)} className="btn btn-ghost rounded-sm btn-sm bg-cyan-600 text-white hover:bg-cyan-600"> <FaUsers></FaUsers> </button>
                                     }
                                    
                                 </td>
