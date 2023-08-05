@@ -1,12 +1,44 @@
 import React from 'react';
 import useCart from '../../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 const MyCart = () => {
-    const [cart] = useCart()
+    const [cart, refetch, isLoading] = useCart()
     console.log(cart);
     const total = cart.reduce((sum, item)=> item.price + sum, 0)
+
+    const handleDelete = (item) =>{
+        console.log(item);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              fetch(`${import.meta.env.VITE_API_URL}/carts/${item._id}`,{
+                method: "DELETE"
+              })
+              .then(res => res.json())
+              .then(data =>{
+                if(data.deletedCount > 0){
+                    refetch()
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+              })
+            }
+          })
+    }
+
     return (
-        <div>
+        <div className='w-full p-2 sm:p-4 md:p-8 lg:p-10 xl:p-12'>
             <div className='font-semibold flex justify-between drop-shadow-sm'>
                 
                 <h3>Total Items: {cart.length}</h3>
@@ -56,7 +88,7 @@ const MyCart = () => {
                                 <td> {data.category} </td>
                                 <td>$ {data.price}</td>
                                 <td>
-                                <button className="btn btn-ghost rounded-sm btn-xs bg-red-600 text-white hover:bg-red-600"> <FaTrashAlt></FaTrashAlt> </button>
+                                <button onClick={()=> handleDelete(data)} className="btn btn-ghost rounded-sm btn-sm bg-red-600 text-white hover:bg-red-600"> <FaTrashAlt></FaTrashAlt> </button>
                                 </td>
                             </tr>
 
