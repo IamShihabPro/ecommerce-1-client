@@ -1,17 +1,22 @@
-import React from 'react';
-import ProductSlider from '../../Components/ProductSlider/ProductSlider';
-import ShopPage from '../ShopPage/ShopPage';
+import React, { useContext } from "react";
+import ProductSlider from "../../Components/ProductSlider/ProductSlider";
+import ShopPage from "../ShopPage/ShopPage";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Loader from "../../Components/Loader/Loader";
 
 const Home = () => {
-    return (
-        <div>
-            
-                {/* <ProductData></ProductData> */}
-                <ShopPage></ShopPage>
+  const { user, loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loader></Loader>;
+  }
+  return (
+    <div>
+      {/* <ProductData></ProductData> */}
+      <ShopPage></ShopPage>
 
-                <ProductSlider></ProductSlider>
-        </div>
-    );
+      <ProductSlider></ProductSlider>
+    </div>
+  );
 };
 
 export default Home;

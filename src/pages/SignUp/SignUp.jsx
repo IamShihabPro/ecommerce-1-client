@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 import { useContext, useRef } from 'react'
 import { AuthContext } from '../../Provider/AuthProvider'
@@ -35,12 +35,28 @@ const SignUp = () => {
             const imgURL = imgData.data.display_url
             console.log(imgURL);
             createUser(email, password)
+
             .then(res =>{   
                 console.log(res.user);
+
                 updateUserProfile(name, imgURL)
                 .then(() =>{   
-                   toast.success('Sign up successfull')
-                    navigate(from, {replace: true})
+                  const saveUser = {name: name, email: email }
+                  fetch(`${import.meta.env.VITE_API_URL}/users`,{
+                    method: "POST",
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(saveUser)
+                  })
+                  .then(res => res.json())
+                  .then(data =>{
+                    if(data.insertedId){
+                      toast.success('Sign up successfull')
+                      navigate(from, {replace: true})
+                    }
+                  })
+
+                  //  toast.success('Sign up successfull')
+                  //   navigate(from, {replace: true})
                 })
                 .catch(err =>{
                     setLoading(false)
@@ -159,6 +175,8 @@ const SignUp = () => {
                 {
                     loading? <TbFidgetSpinner className='m-auto animate-spin' size={24}></TbFidgetSpinner> : 'Continue'
                 }
+
+                <Toaster />
             </button>
           </div>
         </form>

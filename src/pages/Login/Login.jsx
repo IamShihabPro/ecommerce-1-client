@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
 import { useContext, useRef } from 'react'
 import { AuthContext } from '../../Provider/AuthProvider'
@@ -121,6 +121,7 @@ const Login = () => {
                 {
                     loading? <TbFidgetSpinner className='m-auto animate-spin' size={24}></TbFidgetSpinner> : 'Continue'
                 }
+                <Toaster></Toaster>
               
             </button>
           </div>
