@@ -27,7 +27,7 @@ const ShopPage = () => {
 
     //  category button dynamic
     const handleCategory = (c) => {
-        console.log(c);
+        // console.log(c);
         setSelectedCategory(c);
       };
 
@@ -59,7 +59,7 @@ const ShopPage = () => {
       };
     
       const filteredProducts = handleFilter();
-      console.log('filter', filteredProducts);
+    //   console.log('filter', filteredProducts);
 
     // const filterProduct = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory)
     // console.log(filterProduct);

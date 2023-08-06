@@ -4,10 +4,16 @@ import { AuthContext } from '../Provider/AuthProvider'
 
 const useCart = email =>{
     const {user} = useContext(AuthContext)
+    const token = localStorage.getItem('access-token')
+
     const { isLoading, isError, data: cart = [], error, refetch } = useQuery({
         queryKey: ['carts', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/carts?email=${user?.email}`)
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/carts?email=${user?.email}`,{
+                headers: {
+                    authorization: `bearer ${token}`
+                }
+            })
             return res.json()
         },
       })

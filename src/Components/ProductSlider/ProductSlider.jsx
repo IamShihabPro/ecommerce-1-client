@@ -21,13 +21,13 @@ const ProductSlider = () => {
     //  console.log(productSlider);
 
     const mensfilterSlider = productSlider.filter(menProduct => menProduct.category === mensProducts )
-    console.log(mensfilterSlider);
+    // console.log(mensfilterSlider);
 
     const womensfilterSlider = productSlider.filter(womenProduct => womenProduct.category === womensProducts )
-    console.log(womensfilterSlider);
+    // console.log(womensfilterSlider);
 
     const kidsfilterSlider = productSlider.filter(kidProduct => kidProduct.category === kidsProducts )
-    console.log(kidsfilterSlider);
+    // console.log(kidsfilterSlider);
 
     return (
         <Container>

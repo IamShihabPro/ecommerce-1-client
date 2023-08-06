@@ -10,7 +10,7 @@ const Nabvbar = () => {
 
     const [cart] = useCart()
 
-    console.log(cart.length);
+    // console.log(cart.length);
 
   const navItems = [
     {
