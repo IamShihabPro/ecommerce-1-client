@@ -47,11 +47,10 @@ const Dashboard = () => {
         isAdmin ? <>
 
             <li className='cursor-pointer'><NavLink to='/dashboard/adminhome' className={({ isActive }) => (isActive ? 'active' : 'default') } ><FaHome></FaHome> Admin Home </NavLink></li>
-            <li className=''><NavLink to='/dashboard/additem' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaSitemap></FaSitemap> Add Product </NavLink></li>
+            <li className=''><NavLink to='/dashboard/addProduct' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> Add Product </NavLink></li>
             <li className=''><NavLink to='/dashboard/manageproduct' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> Manage Product </NavLink></li>
             <li className=''><NavLink to='/dashboard/manageorder' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Manage Order </NavLink></li>
             <li className=''><NavLink to='/dashboard/allusers' className={({ isActive }) => (isActive ? 'active' : 'default')}> <FaUsers></FaUsers> All Users </NavLink></li>
-
         
          </> :
 
