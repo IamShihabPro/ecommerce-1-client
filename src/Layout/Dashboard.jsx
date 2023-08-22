@@ -3,11 +3,13 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaSitemap, FaUsers } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 import Loader from '../Components/Loader/Loader';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
   const {user, loading} = useContext(AuthContext)
 
-  const isAdmin = true
+  // const isAdmin = true
+  const [isAdmin] = useAdmin();
   
   if(loading){
     return <Loader></Loader>
@@ -15,13 +17,13 @@ const Dashboard = () => {
 
     return (
         <div className="drawer lg:drawer-open">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center bg-slate-200">
-    {/* Page content here */}
-    <div className=' w-full'>
-        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden mt-3 w-full">Open Dashboard</label>
-    </div>
-    <Outlet></Outlet>
+          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content flex flex-col items-center justify-center bg-slate-200">
+            {/* Page content here */}
+            <div className=' w-full'>
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden mt-3 w-full">Open Dashboard</label>
+            </div>
+            <Outlet></Outlet>
   
   </div> 
 
@@ -33,10 +35,10 @@ const Dashboard = () => {
       <div className='text-white mb-10'>
           <div className="avatar online">
             <div className="w-16 rounded-full">
-              <img src={user.photoURL} />
+              <img src={user?.photoURL} />
             </div>
           </div>
-          <h2 className='text-white font-bold mt-2 ml-1'>{user.displayName}</h2>
+          <h2 className='text-white font-bold mt-2 ml-1'>{user?.displayName}</h2>
       </div>
 
       {/* Sidebar content here */}

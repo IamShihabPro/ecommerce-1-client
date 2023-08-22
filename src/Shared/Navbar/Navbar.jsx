@@ -61,8 +61,8 @@ const Nabvbar = () => {
 
                         {
                             user&& <>
-                                <Link to='/cart' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center"> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
-                                <Link to='/dashboard' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium px-3">Dashboard</Link> 
+                                <Link to='/dashboard' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center"> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
+                                {/* <Link to='/dashboard' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium px-3">Dashboard</Link>  */}
                             </>  
                         }
 
