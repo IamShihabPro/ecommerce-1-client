@@ -54,7 +54,8 @@ const ProductForm = () => {
     const description = form.productDescription.value;
     const image = form.productImage.value;
     
-    console.log(name,category, price,image, ratings, description, selectedColors, selectedSize);
+    const product = {name,category, price,image, ratings, description, selectedColors, selectedSize};
+    console.log(product);
     
   };
 
