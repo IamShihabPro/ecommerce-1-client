@@ -26,7 +26,7 @@ const ProductData = () => {
 
 
     useEffect(()=>{
-        fetch('shops.json')
+        fetch(`${import.meta.env.VITE_API_URL}/products`)
         .then(res => res.json())
         .then(data => {
             setProducts(data)
@@ -51,7 +51,7 @@ const ProductData = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
                 {
-                    filterProduct.slice(0,15).map(product =>(
+                    filterProduct.map(product =>(
 
                         <div  key={product.id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2'>
                         <div className='flex flex-col gap-2 w-full'>

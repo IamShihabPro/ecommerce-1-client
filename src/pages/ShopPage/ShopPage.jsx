@@ -141,7 +141,7 @@ const ShopPage = () => {
                 <div className='col-span-3'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6'>
                         {
-                            filteredProducts.slice(0,15).map(product => <ShopCard key={product._id} product={product} ></ShopCard>)
+                            filteredProducts.slice(0,18).map(product => <ShopCard key={product._id} product={product} ></ShopCard>)
                         }
                     </div>
 

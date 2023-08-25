@@ -26,8 +26,8 @@ const ProductForm = () => {
   const [productPrice, setProductPrice] = useState('');
   const [productRating, setProductRating] = useState('');
   const [productImage, setProductImage] = useState('');
-  const [selectedColors, setSelectedColors] = useState([]);
-  const [selectedSize, setSelectedSize] = useState([]);
+  const [colors, setSelectedColors] = useState([]);
+  const [sizes, setSelectedSize] = useState([]);
   const [productDescription, setProductDescription] = useState('');
 
   const handleColorChange = (selectedOptions) => {
@@ -54,8 +54,19 @@ const ProductForm = () => {
     const description = form.productDescription.value;
     const image = form.productImage.value;
     
-    const product = {name,category, price,image, ratings, description, selectedColors, selectedSize};
+    const product = {name,category, price,image, ratings, description, colors, sizes};
     console.log(product);
+
+    fetch(`${import.meta.env.VITE_API_URL}/products`,{
+      method: "POST",
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(product)
+      
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+    })
     
   };
 
@@ -151,13 +162,13 @@ const ProductForm = () => {
         <Select
           options={colorOptions}
           isMulti
-          value={selectedColors}
+          value={colors}
           onChange={handleColorChange}
         />
       </div>
       {/* <h2 className="text-lg font-semibold mt-6">Selected Colors:</h2> */}
-      <ul className="list-disc ml-6 mt-2 flex justify-between">
-        {selectedColors.map((color) => (
+      <ul className="list-disc ml-6 mt-2 grid grid-cols-3 justify-between">
+        {colors.map((color) => (
           <li key={color.value}>{color.label}</li>
         ))}
       </ul>
@@ -171,13 +182,13 @@ const ProductForm = () => {
         <Select
           options={sizeOptions}
           isMulti
-          value={selectedSize}
+          value={sizes}
           onChange={handleSizeChange}
         />
       </div>
       {/* <h2 className="text-lg font-semibold mt-6">Selected Size</h2> */}
       <ul className="list-disc ml-6 mt-2 flex justify-between">
-        {selectedSize.map((color) => (
+        {sizes.map((color) => (
           <li key={color.value}>{color.label}</li>
         ))}
       </ul>
