@@ -31,7 +31,7 @@ const ProductView = () => {
                     <div className='flex gap-2 my-3'>
                         {
                             colors.map(color => (
-                                <div className={`border p-2 rounded text-white bg-red-600 `}>
+                                <div className={`border p-2 rounded text-red-600 shadow-md`}>
                                     {color.label}
                                 </div>
                             ) )
@@ -41,7 +41,7 @@ const ProductView = () => {
                     <div className='flex gap-2'>
                         {
                             sizes.map(size => (
-                                <div className='border p-2 rounded bg-red-600 text-white'>
+                                <div className='border p-2 rounded bg-red-600 text-white shadow-md'>
                                     {size.label}
                                 </div>
                             ) )

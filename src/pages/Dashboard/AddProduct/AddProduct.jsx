@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import Swal from 'sweetalert2';
 
 const categories = ['Mens', 'Womens', 'Kids']; // Sample categories
 
@@ -54,7 +55,7 @@ const ProductForm = () => {
     const description = form.productDescription.value;
     const image = form.productImage.value;
     
-    const product = {name,category, price,image, ratings, description, colors, sizes};
+    const product = {name,category, price : parseFloat(price) ,image, ratings, description, colors, sizes};
     console.log(product);
 
     fetch(`${import.meta.env.VITE_API_URL}/products`,{
@@ -66,6 +67,15 @@ const ProductForm = () => {
     .then(res => res.json())
     .then(data =>{
       console.log(data);
+      if(data.insertedId){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Product Added Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
     })
     
   };
