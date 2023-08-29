@@ -3,9 +3,11 @@ import { FaTrash, FaRegEdit } from 'react-icons/fa';
 
 import useProduct from '../../../hooks/useProduct';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const ManageProduct = () => {
     const [products, refetch, isLoading] = useProduct()
+    const [axiosSecure] = useAxiosSecure()
     // console.log(products);
 
     const handleDelete = (product) =>{
@@ -20,12 +22,10 @@ const ManageProduct = () => {
             confirmButtonText: 'Confirm'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`${import.meta.env.VITE_API_URL}/products/${product._id}`,{
-                method: "DELETE"
-              })
-              .then(res => res.json())
+                axiosSecure.delete(`/products/${product._id}`)
+            //   .then(res => res.json())
               .then(data =>{
-                if(data.deletedCount > 0){
+                if(data.data.deletedCount > 0){
                     refetch()
                     Swal.fire(
                         'Deleted!',

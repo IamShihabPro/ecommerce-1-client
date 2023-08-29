@@ -19,7 +19,7 @@ const useCart = email =>{
                     authorization: `bearer ${token}`
                 }
             })
-            console.log(res);
+            // console.log(res);
             return res.json()
         },
 

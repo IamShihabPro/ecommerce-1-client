@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const categories = ['Mens', 'Womens', 'Kids']; // Sample categories
 
@@ -32,8 +31,6 @@ const ProductForm = () => {
   const [sizes, setSelectedSize] = useState([]);
   const [productDescription, setProductDescription] = useState('');
 
-  const [axiosSecure] = useAxiosSecure()
-
   const handleColorChange = (selectedOptions) => {
     setSelectedColors(selectedOptions);
     // console.log(selectedOptions);
@@ -61,11 +58,16 @@ const ProductForm = () => {
     const product = {name,category, price : parseFloat(price) ,image, ratings, description, colors, sizes};
     console.log(product);
 
-    axiosSecure.post('/products',product)
-    // .then(res => res.json())
+    fetch(`${import.meta.env.VITE_API_URL}/products`,{
+      method: "POST",
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(product)
+      
+    })
+    .then(res => res.json())
     .then(data =>{
       console.log(data);
-      if(data.data.insertedId){
+      if(data.insertedId){
         Swal.fire({
           position: 'top-end',
           icon: 'success',

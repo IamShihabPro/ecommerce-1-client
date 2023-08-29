@@ -3,7 +3,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth';
 
-const CheckoutForm = ({price}) => {
+const CheckoutForm = ({cart, price}) => {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -16,7 +16,7 @@ const CheckoutForm = ({price}) => {
 
 
     useEffect(()=>{
-        axiosSecure.post('/create-payment-intent',{price})
+        axiosSecure.post('/create-payment-intent', {price})
         .then(res => {
             console.log(res.data.clientSecret);
             setClientSecret(res.data.clientSecret);
@@ -24,27 +24,20 @@ const CheckoutForm = ({price}) => {
     },[price, axiosSecure])
 
     const handleSubmit = async (event) =>{
-         // Block native form submission.
         event.preventDefault();
 
-        if (!stripe || !elements) {
-            // Stripe.js has not loaded yet. Make sure to disable
-            // form submission until Stripe.js has loaded.
+        if (!stripe || !elements) { 
             return;
         }
 
-        // Get a reference to a mounted CardElement. Elements knows how
-        // to find your CardElement because there can only ever be one of
-        // each type of element.
+       
         const card = elements.getElement(CardElement);
 
         if (card == null) {
         return;
         }
 
-        // console.log('card', card);
-        
-          // Use your card Element with other Stripe.js APIs
+       
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
             card,
@@ -77,8 +70,6 @@ const CheckoutForm = ({price}) => {
           }
 
           console.log(paymentIntent);
-
-
     }
 
     return (
