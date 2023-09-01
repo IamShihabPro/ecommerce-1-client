@@ -59,7 +59,7 @@ const Dashboard = () => {
             <li className='cursor-pointer'><NavLink to='/dashboard/userhome' className={({ isActive }) => (isActive ? 'active' : 'default') } ><FaHome></FaHome> User Home </NavLink></li>
             <li className=''><NavLink to='/dashboard/booking' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaCalendarAlt></FaCalendarAlt> Bookings </NavLink></li>
             <li className=''><NavLink to='/dashboard/mycart' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaShoppingCart></FaShoppingCart> My Cart  </NavLink></li>
-            <li className=''><NavLink to='/dashboard/payment' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Payment History </NavLink></li>
+            <li className=''><NavLink to='/dashboard/paymenthistory' className={({ isActive }) => (isActive ? 'active' : 'default')}><FaWallet></FaWallet> Payment History </NavLink></li>
 
         
         </>
