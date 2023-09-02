@@ -6,14 +6,15 @@ import Loader from "../../Components/Loader/Loader";
 import Banner from "../../Components/Banner/Banner";
 
 const Home = () => {
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading , theme} = useContext(AuthContext);
   if (loading) {
     return <Loader></Loader>;
   }
   return (
-    <div>
+    <div >
       <Banner></Banner>
       {/* <ProductData></ProductData> */}
+      
       <ShopPage></ShopPage>
 
       <ProductSlider></ProductSlider>

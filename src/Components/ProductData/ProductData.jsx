@@ -6,8 +6,11 @@ import { FaEye } from 'react-icons/fa';
 import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useAuth from '../../hooks/useAuth';
 
 const ProductData = () => {
+    const {theme} = useAuth()
+    
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');

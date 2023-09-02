@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 
 const ShopPage = () => {
     const {theme} = useAuth()
+    
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');

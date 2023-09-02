@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Container from '../Container/Container';
 import Card from './Card';
+import useAuth from '../../hooks/useAuth';
 
 const ProductSlider = () => {
+    const {theme} = useAuth()
     const [productSlider, setProductSlider] = useState([])
     const [mensProducts, setMensProducts] = useState('Mens')
     const [womensProducts, setWomensProducts] = useState('Womens')
@@ -31,17 +33,17 @@ const ProductSlider = () => {
 
     return (
         <Container>
-             <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Mens Feshion</h2>
+             <h2 className={`text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4 ${theme === 'dark' ? 'text-slate-100' : 'text-black'}`}>Mens Feshion</h2>
             <div className="flex overflow-x-auto my-4">
                 {mensfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
 
-             <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Womens Feshion</h2>
+             <h2  className={`text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4 ${theme === 'dark' ? 'text-slate-100' : 'text-black'}`}>Womens Feshion</h2>
             <div className="flex overflow-x-auto my-4">
                 {womensfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
 
-             <h2 className='text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4'>Kids Feshion</h2>
+             <h2  className={`text-2xl font-medium text-gray-700 uppercase mb-6 mt-16 ml-4 ${theme === 'dark' ? 'text-slate-100' : 'text-black'}`}>Kids Feshion</h2>
             <div className="flex overflow-x-auto my-4">
                 {kidsfilterSlider.map((product) => <Card key={product._id} product={product}></Card> )}
             </div>
