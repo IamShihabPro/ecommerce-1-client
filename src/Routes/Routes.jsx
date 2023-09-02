@@ -17,6 +17,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import UpdateProduct from "../pages/Dashboard/UpdateProduct/UpdateProduct";
+import ContactForm from "../pages/ContactForm/ContactForm";
 
 
 export const router = createBrowserRouter([
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: '/shop',
         element: <ProductData></ProductData>
+      },
+      {
+        path: '/contact',
+        element: <ContactForm></ContactForm>
       },
       {
         path: '/productview/:id',
