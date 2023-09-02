@@ -67,7 +67,7 @@ const ShopPage = () => {
     return (
         <Container>
             
-            <h2 className='text-gray-700 text-center text-3xl font-medium my-3'>Shop By Category</h2>
+            <h2 className='text-gray-700 text-center text-3xl font-medium my-3 mt-20'>Shop By Category</h2>
             {/* shop page wrapper */}
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 pt-4 pb-16'>
                 

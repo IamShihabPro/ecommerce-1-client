@@ -4,6 +4,7 @@ import { FaTrash, FaRegEdit } from 'react-icons/fa';
 import useProduct from '../../../hooks/useProduct';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const ManageProduct = () => {
     const [products, refetch, isLoading] = useProduct()
@@ -79,7 +80,9 @@ const ManageProduct = () => {
                             </td>
                             <td className='font-medium'>$ {product.price}</td>
                             <th>
-                            <button className="btn btn-sm rounded-sm bg-green-600 text-white hover:bg-green-500"> <FaRegEdit></FaRegEdit> </button>
+                                <Link to={`updateproduct/${product._id}`}>
+                                    <button className="btn btn-sm rounded-sm bg-green-600 text-white hover:bg-green-500"> <FaRegEdit></FaRegEdit> </button>
+                                </Link>
                             </th>
                             <th>
                             <button onClick={()=> handleDelete(product)} className="btn btn-sm rounded-sm bg-red-600 text-white hover:bg-red-500"> <FaTrash></FaTrash> </button>

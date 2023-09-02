@@ -42,18 +42,18 @@ const Nabvbar = () => {
 
 
   return (
-    <nav className="bg-gray-100 fixed top-0 inset-x-0 z-50">
+    <nav className="bg-gray-900 fixed top-0 inset-x-0 z-50">
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-6'>
             <div className='flex items-center justify-between h-16'>
                 <div className=''>
-                    <h1 className='text-gray-600 font-bold text-3xl'>Hexa Shop</h1>
+                    <h1 className='text-gray-200 font-bold text-3xl'>Hexa Shop</h1>
                 </div>
 
                 <div className='hidden md:block lg:block'>
                     <div className="ml-10 flex items-baseline space-x-4">
                         {
                             navItems.map(({id, link, title})=> (
-                                <Link to={link}  key={id} className="text-gray-600 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md font-medium text-base">
+                                <Link to={link}  key={id} className="text-gray-200 hover:text-blue-500 hover:scale-105 px-3 py-2 rounded-md font-medium text-base">
                                 {title}
                                 </Link>
                             ))
@@ -61,7 +61,7 @@ const Nabvbar = () => {
 
                         {
                             user&& <>
-                                <Link to='/dashboard' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center"> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
+                                <Link to='/dashboard' className="text-gray-200 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium flex items-center"> <FaShoppingCart className='w-14' ></FaShoppingCart> <sup className='-ml-5 text-sm'> +{cart?.length || 0} </sup> </Link> 
                                 {/* <Link to='/dashboard' className="text-gray-600 hover:text-blue-500 hover:scale-105 rounded-md text-sm font-medium px-3">Dashboard</Link>  */}
                             </>  
                         }
