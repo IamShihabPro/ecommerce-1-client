@@ -21,6 +21,7 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [theme, setTheme] = useState("light")
 
   const createUser = (email, password) => {
     setLoading(true)
@@ -53,6 +54,11 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     })
   }
+
+  useEffect(() => {
+    const thm = localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    setTheme(thm)
+}, [])
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -90,6 +96,7 @@ const AuthProvider = ({ children }) => {
     resetPassword,
     logOut,
     updateUserProfile,
+    theme, setTheme
   }
 
   return (

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import Container from '../../Components/Container/Container';
 import ShopCard from './ShopCard';
+import useAuth from '../../hooks/useAuth';
 
 const ShopPage = () => {
+    const {theme} = useAuth()
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -67,20 +69,20 @@ const ShopPage = () => {
     return (
         <Container>
             
-            <h2 className='text-gray-700 text-center text-3xl font-medium my-3 mt-20'>Shop By Category</h2>
+            <h2 className={` text-center text-3xl font-medium my-3 mt-20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Shop By Category</h2>
             {/* shop page wrapper */}
             <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 pt-4 pb-16'>
                 
                 {/* sidebar */}
 
-                <div className='col-span-1 bg-white px-4 pb-6 rounded overflow-hidden '>
-                    <div className='divided-y divide-gray-200 shadow py-2 px-2 space-y-5'>
+                <div className={`col-span-1 px-4 pb-6 rounded overflow-hidden ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                    <div className='divided-y divide-gray-200  py-2 px-2 space-y-5 shadow-lg'>
                         {/* category filter */}
-                        <div>
-                            <h3 className='text-xl text-gray-700 mb-3 uppercase font-medium mt-4 px-2'>Category</h3>
+                        <div className=''>
+                            <h3 className={`text-xl mb-3 uppercase font-medium mt-4 px-2 ${theme === 'dark' ? 'text-white' : 'text-black'} `}>Category</h3>
                             {/* single Category */}
 
-                            <div className='mt-8 mb-8 flex flex-col justify-center'>
+                            <div className='mt-8 mb-8 flex flex-col justify-center text-red-500'>
 
                                 <button onClick={()=> handleCategory('All')} className={`p-2 ${selectedCategory === 'All' ? 'bg-blue-500 text-white' : 'bg-white'}`}>All</button>
                                 {
@@ -94,7 +96,7 @@ const ShopPage = () => {
                             <hr />
 
                              {/* Price Range Filter */}
-                                <div className="flex flex-col gap-6 items-center">
+                                <div className="flex flex-col gap-6 items-center ">
                                 <label className="mr-2 mt-4 font-medium">Price Range:</label>
                                 <div className=''>
                                     <span>${minPriceFilter}</span>
@@ -103,7 +105,7 @@ const ShopPage = () => {
                                         min="0"
                                         max="100"
                                         step="1"
-                                        className="w-40 mx-2"
+                                        className="w-40 mx-2 "
                                         value={minPriceFilter}
                                         onChange={e => setMinPriceFilter(parseInt(e.target.value))}
                                     />

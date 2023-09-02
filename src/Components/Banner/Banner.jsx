@@ -14,9 +14,11 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import SliderOne from './SliderOne';
 import SliderTwo from './SliderTwo';
 import SliderThree from './SliderThree';
+import useAuth from '../../hooks/useAuth';
 
 
 const Banner = () => {
+  const {theme} = useAuth()
   return (
     <div className="bg-gray-100 -mt-28">
      <Swiper
