@@ -77,7 +77,7 @@ const ShopPage = () => {
                 {/* sidebar */}
 
                 <div className={`col-span-1 px-4 pb-6 rounded overflow-hidden ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                    <div className='divided-y divide-gray-200  py-2 px-2 space-y-5 shadow-lg'>
+                    <div className={`divided-y divide-gray-200  py-2 px-2 space-y-5 shadow-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
                         {/* category filter */}
                         <div className=''>
                             <h3 className={`text-xl mb-3 uppercase font-medium mt-4 px-2 ${theme === 'dark' ? 'text-white' : 'text-black'} `}>Category</h3>
