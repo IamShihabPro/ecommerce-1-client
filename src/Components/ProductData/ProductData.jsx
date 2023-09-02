@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaEye } from 'react-icons/fa';
+import useCart from '../../hooks/useCart';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const ProductData = () => {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
+
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const [refetch, isLoading] = useCart()
 
 
     // category name of product
@@ -35,7 +45,54 @@ const ProductData = () => {
     // console.log(products);
 
     const filterProduct = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory)
-    console.log(filterProduct);
+    // console.log(filterProduct);
+
+
+
+    
+    const handleAddToCart = product =>{
+        console.log(product);
+        const {_id, name, image, description, price, category, sizes, colors, ratings} = product
+
+        if(user && user.email){
+            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings , email: user.email}
+            fetch(`${import.meta.env.VITE_API_URL}/carts`,{
+                method:"POST",
+                headers:{'content-type': 'application/json'},
+                body: JSON.stringify(orderProduct)
+            })
+            .then(res => res.json())
+            .then(data =>{
+                if(data.insertedId){
+                    isLoading()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Cart saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      refetch
+                }
+            })
+        }
+        else{
+            Swal.fire({
+                title: 'Please Login First',
+                
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+              })
+        }
+
+    }
 
 
     return (
@@ -53,7 +110,7 @@ const ProductData = () => {
                 {
                     filterProduct.map(product =>(
 
-                        <div  key={product.id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2'>
+                        <div  key={product._id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2'>
                         <div className='flex flex-col gap-2 w-full'>
                         <div className=' aspect-square w-full relative overflow-hidden rounded-md'>
                             <img className=' object-cover h-full w-full group-hover:scale-110 transition'
@@ -75,6 +132,11 @@ const ProductData = () => {
                             <Rating style={{ maxWidth: 70 }} value={product.ratings} readOnly />
                             </div>
                         </div>
+                        <div className='flex justify-between items-center mt-1'>
+                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm shadow-md">Add to card</button>
+                                <Link  to={`/productview/${product._id}`}> <button className="btn btn-sm text-blue-600 bg-white shadow-md"> <FaEye></FaEye>  </button> </Link>
+                                
+                            </div>
                         </div>
                     </div>
 

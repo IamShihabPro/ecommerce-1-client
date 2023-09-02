@@ -32,8 +32,8 @@ const Card = ({product}) => {
                             </div>
 
                             <div className='flex justify-between items-center mt-1'>
-                                <button className="btn btn-outline">Add to card</button>
-                                <button className="btn "><FaEye></FaEye></button>
+                                <button className="btn btn-outline btn-sm shadow-md">Add to card</button>
+                                <button className="btn btn-sm text-blue-600 bg-white shadow-md"><FaEye></FaEye></button>
                             </div>
                         </div>
                     </div>

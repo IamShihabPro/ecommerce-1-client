@@ -36,7 +36,7 @@ const ShopCard = ({product}) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
-                      refetch()
+                      refetch
                 }
             })
         }
@@ -85,8 +85,8 @@ const ShopCard = ({product}) => {
                             </div>
 
                             <div className='flex justify-between items-center mt-1'>
-                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline">Add to card</button>
-                                <Link  to={`/productview/${_id}`}> <button className="btn "> <FaEye></FaEye>  </button> </Link>
+                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm  shadow-md">Add to card</button>
+                                <Link  to={`/productview/${_id}`}> <button className="btn btn-sm text-blue-600 bg-white shadow-md"> <FaEye></FaEye>  </button> </Link>
                                 
                             </div>
                         </div>

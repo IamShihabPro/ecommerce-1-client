@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 const ProductView = () => {
     const product = useLoaderData()
     const {colors, sizes} = product
-    console.log(colors);
+    // console.log(colors);
 
     return (
         <Container>
@@ -30,8 +30,8 @@ const ProductView = () => {
 
                     <div className='flex gap-2 my-3'>
                         {
-                            colors.map(color => (
-                                <div className={`border p-2 rounded text-red-600 shadow-md`}>
+                            colors.map((color, i) => (
+                                <div key={i} className={`border p-2 rounded text-red-600 shadow-md`}>
                                     {color.label}
                                 </div>
                             ) )
@@ -40,8 +40,8 @@ const ProductView = () => {
 
                     <div className='flex gap-2'>
                         {
-                            sizes.map(size => (
-                                <div className='border p-2 rounded bg-red-600 text-white shadow-md'>
+                            sizes.map((size, i) => (
+                                <div key={i} className='border p-2 rounded bg-red-600 text-white shadow-md'>
                                     {size.label}
                                 </div>
                             ) )
