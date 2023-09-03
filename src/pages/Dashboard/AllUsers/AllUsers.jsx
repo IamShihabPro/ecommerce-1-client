@@ -67,7 +67,7 @@ const AllUsers = () => {
 
 
     return (
-        <div className='w-8/12 p-2 sm:p-4 md:p-8 lg:p-10 xl:p-12'>
+        <div className=' w-full p-2 sm:p-4 md:p-8 lg:p-10 xl:p-12'>
             <h3 className='text-2xl font-semibold'>Total Users: { users.length} </h3>
 
             <hr className='w-full h-1 my-2 bg-gray-700' />

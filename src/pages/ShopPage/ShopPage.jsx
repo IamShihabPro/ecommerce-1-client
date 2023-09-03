@@ -83,7 +83,7 @@ const ShopPage = () => {
                             <h3 className={`text-xl mb-3 uppercase font-medium mt-4 px-2 ${theme === 'dark' ? 'text-white' : 'text-black'} `}>Category</h3>
                             {/* single Category */}
 
-                            <div className='mt-8 mb-8 flex flex-col justify-center text-red-500'>
+                            <div className='mt-8 mb-8 flex flex-col justify-center text-blue-500'>
 
                                 <button onClick={()=> handleCategory('All')} className={`p-2 ${selectedCategory === 'All' ? 'bg-blue-500 text-white' : 'bg-white'}`}>All</button>
                                 {

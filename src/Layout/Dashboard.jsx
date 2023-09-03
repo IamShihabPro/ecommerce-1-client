@@ -23,7 +23,10 @@ const Dashboard = () => {
             <div className=' w-full'>
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden mt-3 w-full">Open Dashboard</label>
             </div>
-            <Outlet></Outlet>
+            
+           <div>
+           <Outlet></Outlet>
+           </div>
   
   </div> 
 
