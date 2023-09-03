@@ -58,6 +58,8 @@ const MyCart = () => {
                         <th>Image</th>
                         <th>Product</th>
                         <th>Category</th>
+                        <th>Color</th>
+                        <th>Size</th>
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
@@ -88,6 +90,8 @@ const MyCart = () => {
                                 <div className="font-bold">{data.name}</div>
                                 </td>
                                 <td> {data.category} </td>
+                                <td className='uppercase'> {data.productColor} </td>
+                                <td className='uppercase'> {data.productSize} </td>
                                 <td>$ {data.price}</td>
                                 <td>
                                 <button onClick={()=> handleDelete(data)} className="btn btn-ghost rounded-sm btn-sm bg-red-600 text-white hover:bg-red-600"> <FaTrashAlt></FaTrashAlt> </button>

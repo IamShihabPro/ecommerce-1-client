@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import Modal from '../Modal/Modal';
 
 const Card = ({product}) => {
     // style={{ minWidth: '320px' }}
@@ -14,13 +15,16 @@ const Card = ({product}) => {
     const navigate = useNavigate()
     const location = useLocation()
 
+    const [itemColor, setItemColor] = useState('')
+    const [itemSize, setItemSize] = useState('')
+
     const [refetch, isLoading] = useCart()
 
-    const handleAddToCart = product =>{
+    const handleAddToCart = (product, productColor, productSize) =>{
         console.log(product);
 
         if(user && user.email){
-            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings, email: user.email}
+            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings, email: user.email, productColor: productColor, productSize: productSize}
             fetch(`${import.meta.env.VITE_API_URL}/carts`,{
                 method:"POST",
                 headers:{'content-type': 'application/json'},
@@ -87,7 +91,9 @@ const Card = ({product}) => {
                             </div>
 
                             <div className='flex justify-between items-center mt-1'>
-                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm  shadow-md">Add to card</button>
+                                {/* <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm  shadow-md">Add to card</button> */}
+                                <Modal product={product} handleAddToCart={handleAddToCart} itemColor={itemColor} setItemColor={setItemColor} setItemSize={setItemSize} ></Modal>
+
                                 <Link  to={`/productview/${_id}`}> <button className="btn btn-sm text-blue-600 bg-white shadow-md"> <FaEye></FaEye>  </button> </Link>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaEye } from 'react-icons/fa';
@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useCart from '../../hooks/useCart';
+import Modal from '../../Components/Modal/Modal';
 
 const ShopCard = ({product}) => {
     const {_id, name, image, description, price, category, sizes, colors, ratings} = product
@@ -13,13 +14,19 @@ const ShopCard = ({product}) => {
     const navigate = useNavigate()
     const location = useLocation()
 
+    const [itemColor, setItemColor] = useState('')
+    const [itemSize, setItemSize] = useState('')
+
+    // console.log('item', itemColor);
+
     const [refetch, isLoading] = useCart()
 
-    const handleAddToCart = product =>{
+    const handleAddToCart = (product, productColor, productSize) =>{
         console.log(product);
 
         if(user && user.email){
-            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings, email: user.email}
+            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings, email: user.email, productColor: productColor, productSize: productSize}
+            console.log(orderProduct);
             fetch(`${import.meta.env.VITE_API_URL}/carts`,{
                 method:"POST",
                 headers:{'content-type': 'application/json'},
@@ -85,7 +92,8 @@ const ShopCard = ({product}) => {
                             </div>
 
                             <div className='flex justify-between items-center mt-1'>
-                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm  shadow-md">Add to card</button>
+                                {/* <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm  shadow-md">Add to card</button> */}
+                                <Modal product={product} handleAddToCart={handleAddToCart} itemColor={itemColor} setItemColor={setItemColor} setItemSize={setItemSize} ></Modal>
                                 <Link  to={`/productview/${_id}`}> <button className="btn btn-sm text-blue-600 bg-white shadow-md"> <FaEye></FaEye>  </button> </Link>
                                 
                             </div>
