@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 const SliderOne = () => {
     const {theme} = useAuth()
     return (
-        <div className={`h-screen w-full bg-white ${theme === 'dark' ? 'bg-slate-800' : 'bg-white'}`}>
+        <div className={`h-screen w-full  ${theme === 'dark' ? 'bg-slate-800' : 'bg-white'}`}>
             <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 sm:flex-col md:flex-row lg:flex-row xl:flex-row text-white pt-4'>
                 <div className='flex flex-col justify-center h-full w-full'>
                     <h2 className={`text-3xl sm:text-4xl max-w-lg font-bold  ${theme === 'dark' ? 'text-blue-600' : 'text-red-600'}`}>Welcome To Hexashop </h2>
