@@ -57,6 +57,7 @@ const ProductForm = () => {
     // const colors = form.colors.value;
     const description = form.productDescription.value;
     const image = form.productImage.value;
+
     
     const product = {name,category, price : parseFloat(price) ,image, ratings, description, colors, sizes};
     console.log(product);
