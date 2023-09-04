@@ -98,6 +98,32 @@ const ProductData = () => {
     }
 
 
+
+
+
+    // pagination
+    const itemsPerPage = 20;
+        const [currentPage, setCurrentPage] = useState(1);
+
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const visibleProducts = filterProduct.slice(startIndex, endIndex);
+
+        const totalPages = Math.ceil(filterProduct.length / itemsPerPage);
+
+        const handleNextPage = () => {
+            if (currentPage < totalPages) {
+                setCurrentPage(currentPage + 1);
+            }
+            };
+
+        const handlePrevPage = () => {
+            if (currentPage > 1) {
+                setCurrentPage(currentPage - 1);
+            }
+        };
+
+
     return (
         <div className="container mx-auto px-4">
             <div className='mt-8 mb-8 flex justify-center space-x-4'>
@@ -111,7 +137,7 @@ const ProductData = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8'>
                 {
-                    filterProduct.map(product =>(
+                    visibleProducts.map(product =>(
 
                         <div  key={product._id} className='col-span-1 cursor-pointer group bg-white drop-shadow-md rounded-md p-2'>
                         <div className='flex flex-col gap-2 w-full'>
@@ -147,6 +173,33 @@ const ProductData = () => {
                 }
 
             </div>
+
+
+            <div className="pagination flex gap-2 mt-10 text-center items-center justify-center">
+                <button className='border-solid border-2 border-indigo-600 p-1 text-indigo-600' onClick={handlePrevPage} disabled={currentPage === 1}>
+                    Prev
+                </button>
+                {Array.from({ length: totalPages }).map((_, index) => (
+                    <button
+                    key={index}
+                    onClick={() => setCurrentPage(index + 1)}
+                    className={currentPage === index + 1 ? 'active border-solid border-2 border-indigo-600 p-1' : 'text-gray-500'}
+                    >
+                    {index + 1}
+                    </button>
+                ))}
+                {totalPages > 5 && currentPage < totalPages - 2 && (
+                    <span className="ellipsis">...</span>
+                )}
+                {totalPages > 5 && currentPage < totalPages - 1 && (
+                    <button onClick={() => setCurrentPage(totalPages)}>{totalPages}</button>
+                )}
+                <button className='border-solid border-2 border-indigo-600 p-1 text-indigo-600' onClick={handleNextPage} disabled={currentPage === totalPages}>
+                    Next
+                </button>
+            </div>
+
+
         </div>
     );
 };
