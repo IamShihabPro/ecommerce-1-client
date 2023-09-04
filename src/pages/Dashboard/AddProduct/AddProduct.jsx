@@ -93,7 +93,7 @@ const ProductForm = () => {
               type="text"
               id="productName"
               name="productName"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productName}
               onChange={(e) => setProductName(e.target.value)}
             />
@@ -105,7 +105,7 @@ const ProductForm = () => {
             <select
               id="productCategory"
               name="productCategory"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productCategory}
               onChange={(e) => setProductCategory(e.target.value)}
             >
@@ -125,7 +125,7 @@ const ProductForm = () => {
               type="number"
               id="productPrice"
               name="productPrice"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productPrice}
               onChange={(e) => setProductPrice(e.target.value)}
             />
@@ -138,7 +138,7 @@ const ProductForm = () => {
               type="number"
               id="productRating"
               name="productRating"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productRating}
               onChange={(e) => setProductRating(e.target.value)}
             />
@@ -151,7 +151,7 @@ const ProductForm = () => {
               type="text"
               id="productImage"
               name="productImage"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productImage}
               onChange={(e) => setProductImage(e.target.value)}
             />
@@ -222,14 +222,14 @@ const ProductForm = () => {
           <textarea
             id="productDescription"
             name="productDescription"
-            className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+            className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
             value={productDescription}
             onChange={(e) => setProductDescription(e.target.value)}
           ></textarea>
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          className="bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full"
         >
           Submit
         </button>
