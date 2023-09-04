@@ -30,10 +30,11 @@ const ProductView = () => {
                     <p className={` my-1 font-semibold text-lg ${theme === 'dark' ? 'text-white ' : 'text-gray-700 '} `}> {product.description}</p>
                     <p className={`text-lg font-medium my-1 ${theme === 'dark' ? 'text-blue-500 ' : 'text-red-600 '}`}>Price: ${product.price}</p>
 
-                    <div className='flex gap-2 my-3'>
+
+                    <div className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-2 my-3'>
                         {
                             colors.map((color, i) => (
-                                <div key={i} className={`border p-2 rounded shadow-md ${theme === 'dark' ? 'text-blue-600 ' : 'text-red-600 '} `}>
+                                <div key={i} className={`border p-2 rounded text-center shadow-md ${theme === 'dark' ? 'text-blue-600 ' : 'text-red-600 '} `}>
                                     {color.label}
                                 </div>
                             ) )
