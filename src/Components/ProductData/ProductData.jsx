@@ -7,6 +7,7 @@ import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useAuth from '../../hooks/useAuth';
+import Modal from '../Modal/Modal';
 
 const ProductData = () => {
     const {theme} = useAuth()
@@ -19,6 +20,9 @@ const ProductData = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const [refetch, isLoading] = useCart()
+
+    const [itemColor, setItemColor] = useState('')
+    const [itemSize, setItemSize] = useState('')
 
 
     // category name of product
@@ -53,12 +57,12 @@ const ProductData = () => {
 
 
     
-    const handleAddToCart = product =>{
+    const handleAddToCart = (product, productColor, productSize) =>{
         console.log(product);
         const {_id, name, image, description, price, category, sizes, colors, ratings} = product
 
         if(user && user.email){
-            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings , email: user.email}
+            const orderProduct = {productId : _id, name, category,image , price, description, sizes, colors, ratings , email: user.email, productColor: productColor, productSize: productSize}
             fetch(`${import.meta.env.VITE_API_URL}/carts`,{
                 method:"POST",
                 headers:{'content-type': 'application/json'},
@@ -162,7 +166,10 @@ const ProductData = () => {
                             </div>
                         </div>
                         <div className='flex justify-between items-center mt-1'>
-                                <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm shadow-md">Add to card</button>
+                                {/* <button onClick={()=> handleAddToCart(product)} className="btn btn-outline btn-sm shadow-md">Add to card</button> */}
+
+                                <Modal product={product} handleAddToCart={handleAddToCart} itemColor={itemColor} setItemColor={setItemColor} setItemSize={setItemSize} ></Modal>
+
                                 <Link  to={`/productview/${product._id}`}> <button className="btn btn-sm text-blue-600 bg-white shadow-md"> <FaEye></FaEye>  </button> </Link>
                                 
                             </div>
