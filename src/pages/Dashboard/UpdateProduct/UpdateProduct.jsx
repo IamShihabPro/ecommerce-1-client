@@ -3,7 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 
 const UpdateProduct = () => {
     const product = useLoaderData()
-    console.log(product);
+    // console.log(product);
+    
     return (
         <div>
             <h2>Update Product</h2>

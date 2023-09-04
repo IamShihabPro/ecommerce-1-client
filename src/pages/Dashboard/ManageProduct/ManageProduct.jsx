@@ -54,7 +54,7 @@ const ManageProduct = () => {
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price </th>
-                        <th>Edit</th>
+                        {/* <th>Edit</th> */}
                         <th>Delete</th>
                     </tr>
                     </thead>
@@ -79,11 +79,11 @@ const ManageProduct = () => {
                             {product.category}
                             </td>
                             <td className='font-medium'>$ {product.price}</td>
-                            <th>
+                            {/* <th>
                                 <Link to={`../updateproduct/${product._id}`}>
                                     <button className="btn btn-sm rounded-sm bg-green-600 text-white hover:bg-green-500"> <FaRegEdit></FaRegEdit> </button>
                                 </Link>
-                            </th>
+                            </th> */}
                             <th>
                             <button onClick={()=> handleDelete(product)} className="btn btn-sm rounded-sm bg-red-600 text-white hover:bg-red-500"> <FaTrash></FaTrash> </button>
                             </th>

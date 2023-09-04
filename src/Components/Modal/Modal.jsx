@@ -27,7 +27,7 @@ const Modal = ({product, handleAddToCart, setItemColor, setItemSize}) => {
     <>
       <button
         className=" text-gray-800
-       px-6 py-2 mt-1 rounded shadow  outline-none focus:outline-none mb-1 hover:scale-105"
+       px-6 py-2 mt-1 rounded shadow font-semibold outline-none focus:outline-none mb-1 hover:scale-105"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -101,7 +101,7 @@ const Modal = ({product, handleAddToCart, setItemColor, setItemSize}) => {
 
 
 
-                    <button onClick={()=> handleAddToCart(product, productColor, productSize)} className="btn btn-outline btn-sm bg-white shadow-md">Add to card</button>
+                    <button onClick={()=> handleAddToCart(product, productColor, productSize)} className="btn btn-xs text-black bg-white hover:bg-white shadow-md">Add to card</button>
                     {/* <button type="submit" className="btn btn-outline btn-sm bg-white shadow-md">Add to card</button> */}
 
 

@@ -49,7 +49,7 @@ const ProductForm = () => {
     e.preventDefault();
     // Handle form submission here
     
-    const form = event.target;
+    const form = e.target;
     const name = form.productName.value;
     const category = form.productCategory.value;
     const price = form.productPrice.value;

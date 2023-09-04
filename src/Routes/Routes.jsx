@@ -16,8 +16,8 @@ import ManageProduct from "../pages/Dashboard/ManageProduct/ManageProduct";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
-import UpdateProduct from "../pages/Dashboard/UpdateProduct/UpdateProduct";
 import ContactForm from "../pages/ContactForm/ContactForm";
+// import UpdateProduct from "../pages/Dashboard/UpdateProduct/UpdateProduct";
 
 
 export const router = createBrowserRouter([
@@ -76,12 +76,12 @@ export const router = createBrowserRouter([
         path: 'manageproduct',
         element: <AdminRoutes> <ManageProduct></ManageProduct> </AdminRoutes>
       },
-      {
-        path: 'updateproduct/:id',
-        element: <UpdateProduct></UpdateProduct>,
-        loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/products/${params.id}`)
+      // {
+      //   path: 'updateproduct/:id',
+      //   element: <UpdateProduct></UpdateProduct>,
+      //   loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/products/${params.id}`)
 
-      },
+      // },
       {
         path: 'allusers',
         element: <AdminRoutes> <AllUsers></AllUsers> </AdminRoutes>
