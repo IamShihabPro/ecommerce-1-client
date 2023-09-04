@@ -80,7 +80,7 @@ const ManageProduct = () => {
                             </td>
                             <td className='font-medium'>$ {product.price}</td>
                             <th>
-                                <Link to={`updateproduct/${product._id}`}>
+                                <Link to={`../updateproduct/${product._id}`}>
                                     <button className="btn btn-sm rounded-sm bg-green-600 text-white hover:bg-green-500"> <FaRegEdit></FaRegEdit> </button>
                                 </Link>
                             </th>

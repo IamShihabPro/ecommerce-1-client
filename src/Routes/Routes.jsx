@@ -73,6 +73,10 @@ export const router = createBrowserRouter([
         element: <Payment></Payment>
       },
       {
+        path: 'manageproduct',
+        element: <AdminRoutes> <ManageProduct></ManageProduct> </AdminRoutes>
+      },
+      {
         path: 'updateproduct/:id',
         element: <UpdateProduct></UpdateProduct>,
         loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/products/${params.id}`)
@@ -90,10 +94,7 @@ export const router = createBrowserRouter([
         path: 'addProduct',
         element: <AdminRoutes> <AddProduct></AddProduct> </AdminRoutes>
       },
-      {
-        path: 'manageproduct',
-        element: <AdminRoutes> <ManageProduct></ManageProduct> </AdminRoutes>
-      },
+     
     ]
   }
 ]);
