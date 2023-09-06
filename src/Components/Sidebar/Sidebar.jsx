@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 import {  BsArrowLeftCircleFill } from 'react-icons/bs';
 import { FaBars, FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaSitemap, FaUsers } from 'react-icons/fa';
 
-import Hexashop from '../../assets/hexa.png'
+import Hexashop from '../../assets/hexa.jpg'
 
 const Sidebar = () => {
     const [open, setOpen] = useState(false)
@@ -37,12 +37,12 @@ const Sidebar = () => {
 
 
                             <div className='mt-10'>
-                            <Link to='/dashboard/adminhome' className={`flex rounded-md  p-4 pt-8 cursor-pointer  hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaHome className='w-5 h-5'></FaHome></span> <span className={`${!open && 'scale-0'}`}>Admin Home </span></Link>
-                            <Link  to='/dashboard/addProduct' className={`flex rounded-md p-4 pt-8 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span>  <span className={`${!open && 'scale-0'}`}> Add Product </span></Link>
-                            <Link  to='/dashboard/manageproduct' className={`flex rounded-md  p-4 pt-8 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>  Manage Product </span></Link>
-                            <Link  to='/dashboard/allusers' className={`flex rounded-md  p-4 pt-8 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaUsers className='w-5 h-5'></FaUsers ></span> <span className={`${!open && 'scale-0'}`}> All Users </span ></Link>
-                            <Link  to='/dashboard/mycart' className={`flex rounded-md  p-4 pt-8 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}> My Cart </span></Link>
-                            <Link to='/' className={`flex rounded-md  p-4 pt-8 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
+                            <Link to='/dashboard/adminhome' className={`flex rounded-md  p-4  cursor-pointer  hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaHome className='w-5 h-5'></FaHome></span> <span className={`${!open && 'scale-0'}`}>Admin Home </span></Link>
+                            <Link  to='/dashboard/addProduct' className={`flex rounded-md p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span>  <span className={`${!open && 'scale-0'}`}> Add Product </span></Link>
+                            <Link  to='/dashboard/manageproduct' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>  Manage Product </span></Link>
+                            <Link  to='/dashboard/allusers' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaUsers className='w-5 h-5'></FaUsers ></span> <span className={`${!open && 'scale-0'}`}> All Users </span ></Link>
+                            <Link  to='/dashboard/mycart' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}> My Cart </span></Link>
+                            <Link to='/' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
 
                     
                             </div>

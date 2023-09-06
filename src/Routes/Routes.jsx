@@ -17,7 +17,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import ContactForm from "../pages/ContactForm/ContactForm";
-import Dash from "../Layout/Dash";
+// import Dash from "../Layout/Dash";
 // import UpdateProduct from "../pages/Dashboard/UpdateProduct/UpdateProduct";
 
 
@@ -99,8 +99,8 @@ export const router = createBrowserRouter([
      
     ]
   },
-  {
-    path: '/dash',
-    element: <Dash></Dash>
-  }
+  // {
+  //   path: '/dash',
+  //   element: <Dash></Dash>
+  // }
 ]);

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BsArrowRightCircleFill, BsArrowLeftCircleFill } from 'react-icons/bs';
-import Hexashop from '../../src/assets/hexa.png'
 // import Sidebar from '../Components/Sidebar/Sidebar';
 
 const Dash = () => {
