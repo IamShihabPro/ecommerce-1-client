@@ -15,7 +15,7 @@ const AdminHome = () => {
         }
     })
     return (
-        <div>
+        <div className='bg-slate-200 ml-24'>
             <h2 className='text-2xl font-medium'>Welcome Back, {user.displayName}</h2>
 
             <div className="stats shadow">

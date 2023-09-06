@@ -46,16 +46,15 @@ const ManageProduct = () => {
 
 
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table ">
                     {/* head */}
-                    <thead className='bg-blue-600 text-white'>
+                    <thead className="bg-gray-800 text-white">
                     <tr>
-                        <th> #</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price </th>
-                        {/* <th>Edit</th> */}
-                        <th>Delete</th>
+                        <th className="px-4 py-2">#</th>
+                        <th className="px-4 py-2">Name</th>
+                        <th className="px-4 py-2">Category</th>
+                        <th className="px-4 py-2">Price</th>
+                        <th className="px-4 py-2">Actions</th>
                     </tr>
                     </thead>
                     <tbody className='bg-slate-200'>
@@ -65,7 +64,7 @@ const ManageProduct = () => {
                         products.map((product, i) => (
                             <tr key={product._id} className='shadow-sm'>
                             <th> {i + 1} </th>
-                            <td>
+                            <td className="border px-4 py-2">
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
                                 <div className="mask rounded-sm w-12 h-12">
@@ -75,10 +74,10 @@ const ManageProduct = () => {
                       
                             </div>
                             </td>
-                            <td className='font-medium'>
+                            <td className="border px-4 py-2">
                             {product.category}
                             </td>
-                            <td className='font-medium'>$ {product.price}</td>
+                            <td className="border px-4 py-2">$ {product.price}</td>
                             {/* <th>
                                 <Link to={`../updateproduct/${product._id}`}>
                                     <button className="btn btn-sm rounded-sm bg-green-600 text-white hover:bg-green-500"> <FaRegEdit></FaRegEdit> </button>
