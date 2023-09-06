@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Loader from "../../Components/Loader/Loader";
 import Banner from "../../Components/Banner/Banner";
 import ContactForm from "../ContactForm/ContactForm";
+import ShowReview from "../ShowReview/ShowReview";
 
 const Home = () => {
   const { user, loading , theme} = useContext(AuthContext);
@@ -19,6 +20,10 @@ const Home = () => {
       <ShopPage></ShopPage>
 
       <ProductSlider></ProductSlider>
+
+      <div className="my-20 mb-10">
+      <ShowReview></ShowReview>
+      </div>
 
       <ContactForm></ContactForm>
     </div>
