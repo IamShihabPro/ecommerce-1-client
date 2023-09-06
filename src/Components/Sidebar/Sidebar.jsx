@@ -49,11 +49,11 @@ const Sidebar = () => {
                             
                             </> : 
                             <>
-                            <button  className='fixed lg:hidden z-90 top-10 left-0 bg-teal-800 w-10 h-10 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-teal-800 duration-300'>
+                            {/* <button  className='fixed lg:hidden z-90 top-10 left-0 bg-teal-800 w-10 h-10 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-teal-800 duration-300'>
                                 <span>
                                     <FaBars className='w-6'></FaBars>
                                 </span>
-                            </button>
+                            </button> */}
 
                             <div className='mt-10'>
                             <Link to='/dashboard/mycart' className={`flex rounded-md p-2 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>Mycart </span></Link>
