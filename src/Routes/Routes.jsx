@@ -16,7 +16,9 @@ import ManageProduct from "../pages/Dashboard/ManageProduct/ManageProduct";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
-import ContactForm from "../pages/ContactForm/ContactForm";
+import Review from "../pages/Review/Review";
+// import ContactForm from "../pages/ContactForm/ContactForm";
+
 // import Dash from "../Layout/Dash";
 // import UpdateProduct from "../pages/Dashboard/UpdateProduct/UpdateProduct";
 
@@ -47,9 +49,13 @@ export const router = createBrowserRouter([
         element: <ProductData></ProductData>,
         loader: () => fetch(`${import.meta.env.VITE_API_URL}/totalProducts`)
       },
+      // {
+      //   path: '/contact',
+      //   element: <ContactForm></ContactForm>
+      // },
       {
-        path: '/contact',
-        element: <ContactForm></ContactForm>
+        path: '/review',
+        element: <Review></Review>
       },
       {
         path: '/productview/:id',

@@ -25,8 +25,8 @@ const Nabvbar = () => {
     },
     {
         id: 3,
-        link: '/contact',
-        title: 'Contact'
+        link: '/review',
+        title: 'Review'
     }
 ]
 

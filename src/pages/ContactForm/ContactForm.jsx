@@ -25,13 +25,7 @@ const ContactForm = () => {
 
   return (
    <div className='pt-10'>
-        <h2
-          className={`text-3xl lg:text-4xl font-bold mb-6 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`} 
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          Contact
-        </h2>
+         <h3 className={`text-2xl mb-3 text-center font-medium mt-4 px-2 ${theme === 'dark' ? 'text-white' : 'text-black'} `}>Contact</h3>
          <form className="max-w-md mx-auto p-6 bg-gray-900 drop-shadow-xl">
       <div className="mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
