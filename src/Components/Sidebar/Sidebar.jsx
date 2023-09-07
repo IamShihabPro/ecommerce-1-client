@@ -27,8 +27,8 @@ const Sidebar = () => {
                 <BsArrowLeftCircleFill onClick={() => setOpen(!open)} className={`text-white w-6 h-6 cursor-pointer rounded-full absolute -right-2 top-9 border-2 border-gray-900 ${!open && 'rotate-180'}`}></BsArrowLeftCircleFill>
 
                 <div className='flex gap-x-4 items-center'>
-                    <img src={Hexashop} className={`cursor-pointer w-10 h-10 rounded-full duration-300`} alt="" />
-                    <h1 className={`text-slate-200 origin-left font-medium text-xl duration-300 ${!open && 'scale-0'}`}>Hexashop</h1>
+                    <img src={user.photoURL} className={`cursor-pointer w-8 h-8 rounded-full duration-300`} alt="" />
+                    <h1 className={`text-slate-200 origin-left font-medium text-xl duration-300 ${!open && 'scale-0'}`}>{user.displayName}</h1>
                 </div>
                 <div>
                     
@@ -59,8 +59,8 @@ const Sidebar = () => {
                             </button> */}
 
                             <div className='mt-10'>
-                            <Link to='/dashboard/mycart' className={`flex rounded-md p-2 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>Mycart </span></Link>
-                            <Link to='/' className={`flex rounded-md p-2 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
+                            <Link to='/dashboard/mycart' className={`flex rounded-md p-2 mt-4 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>Mycart </span></Link>
+                            <Link to='/' className={`flex rounded-md p-2 mt-4 cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
 
                             </div>
                             
