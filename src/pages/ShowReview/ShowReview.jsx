@@ -68,7 +68,7 @@ const ShowReview = () => {
                 <div className='flex flex-col items-center text-center h-full w-full mt-2'>
                     <h2 className={`text-2xl sm:text-2xl max-w-md font-bold  ${theme === 'dark' ? 'text-blue-600' : 'text-red-600'}`}>{review.name} </h2>
 
-                    <p className={` text-gray-900 max-w-lg ${theme === 'dark' ? 'text-white' : 'text-black'}`}> "{review.message}"</p>
+                    <p className={` text-gray-900 max-w-lg ${theme === 'dark' ? 'text-white' : 'text-black'}`}> {review.message}</p>
                 </div>
 
                

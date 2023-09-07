@@ -87,36 +87,6 @@ const Review = () => {
           
           </div>
 
-      {/* <div className="mb-4 mt-8">
-        <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
-          Name
-        </label>
-        <input
-          className="appearance-none bg-gray-800 rounded w-full py-2 px-3 text-white  leading-tight focus:outline-none focus:shadow-outline"
-          id="name"
-          type="text"
-          placeholder="Your name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div> */}
-      {/* <div className="mb-4">
-        <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="appearance-none bg-gray-800 rounded w-full py-2 px-3 text-white  leading-tight focus:outline-none focus:shadow-outline "
-          id="email"
-          type="email"
-          placeholder="Your email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </div> */}
       <div className="mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
           Message
@@ -134,7 +104,7 @@ const Review = () => {
       </div>
       <div className="flex justify-center">
         <button
-          className="bg-blue-500 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className={`bg-blue-500 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline  ${theme === 'dark' ? 'bg-blue-600' : 'bg-red-600'}`}
           type="submit"
         >
           Submit

@@ -7,7 +7,7 @@ const SliderOne = () => {
     const {theme} = useAuth()
     return (
         <div className={`h-screen w-full  ${theme === 'dark' ? 'bg-slate-800' : 'bg-white'}`}>
-            <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 sm:flex-col md:flex-row lg:flex-row xl:flex-row text-white pt-4'>
+            <div className='max-w-screen-lg mx-auto mt-28 sm:mt-6 md:mt-4 lg:mt-0 xl:mt-0 flex flex-col items-center justify-center h-full px-4 sm:flex-col md:flex-row lg:flex-row xl:flex-row text-white pt-4'>
                 <div className='flex flex-col justify-center h-full w-full'>
                     <h2 className={`text-3xl sm:text-4xl max-w-lg font-bold text-left  ${theme === 'dark' ? 'text-blue-600' : 'text-red-600'}`}>Unveil the Latest Fashion Sensations! </h2>
 
@@ -15,8 +15,8 @@ const SliderOne = () => {
 
                       {/* Button */}
                     <div className='flex gap-4'>
-                            <button className={`group text-white w-fit flex items-center rounded-md px-6 py-3 my-2 cursor-pointer duration-200 ${theme === 'dark' ? 'bg-blue-600' : 'bg-red-600'} `}> 
-                            <Link to='Portfolio' className='flex justify-center items-center' smooth duration={500} > Projects <span className='ml-2 group-hover:rotate-90 duration-200'><FaArrowRight></FaArrowRight> </span></Link>
+                            <button className={`group mb-16 text-white w-fit flex items-center rounded-md px-6 py-3 my-2 cursor-pointer duration-200 ${theme === 'dark' ? 'bg-blue-600' : 'bg-red-600'} `}> 
+                            <Link className='flex justify-center items-center' smooth duration={500} > Projects <span className='ml-2 group-hover:rotate-90 duration-200'><FaArrowRight></FaArrowRight> </span></Link>
                             
                             </button>
                     </div>

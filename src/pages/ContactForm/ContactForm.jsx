@@ -98,7 +98,7 @@ const ContactForm = () => {
       </div>
       <div className="flex justify-center">
         <button
-          className="bg-blue-500 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className={` text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline  ${theme === 'dark' ? 'bg-blue-600' : 'bg-red-600'}`}
           type="submit"
         >
           Submit
