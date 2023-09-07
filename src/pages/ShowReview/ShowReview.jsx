@@ -51,7 +51,7 @@ const ShowReview = () => {
         className="mySwiper"
       >
         {
-          reviews.map((review, i) => (
+          reviews.slice(0,5).map((review, i) => (
             <SwiperSlide key={i}> 
              
              <div className={`h-96 w-full  ${theme === 'dark' ? 'bg-slate-800' : 'bg-slate-100'}`}>

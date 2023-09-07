@@ -51,7 +51,7 @@ const Review = () => {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Product Added Successfully',
+          title: 'Thank You For Your Review',
           showConfirmButton: false,
           timer: 1500
         })

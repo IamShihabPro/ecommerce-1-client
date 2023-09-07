@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const ContactForm = () => {
     const {theme} = useAuth()
@@ -21,12 +22,35 @@ const ContactForm = () => {
       email: '',
       message: '',
     });
+
+
+    fetch(`${import.meta.env.VITE_API_URL}/contacts`,{
+      method: "POST",
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(formData)
+      
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+      if(data.insertedId){
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Thank You For Contact',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    }) 
+
+
   };
 
   return (
    <div className='pt-10'>
          <h3 className={`text-2xl mb-3 text-center font-semibold mt-4 px-2 ${theme === 'dark' ? 'text-white' : 'text-black'} `}>Contact</h3>
-         <form className="max-w-md mx-auto p-6 bg-gray-900 drop-shadow-xl">
+         <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-gray-900 drop-shadow-xl">
       <div className="mb-4">
         <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
           Name

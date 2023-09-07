@@ -17,6 +17,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import Review from "../pages/Review/Review";
+import ShowContact from "../pages/Dashboard/ShowContact/ShowContact";
 // import ContactForm from "../pages/ContactForm/ContactForm";
 
 // import Dash from "../Layout/Dash";
@@ -101,6 +102,10 @@ export const router = createBrowserRouter([
       {
         path: 'addProduct',
         element: <AdminRoutes> <AddProduct></AddProduct> </AdminRoutes>
+      },
+      {
+        path: 'contacts',
+        element: <AdminRoutes> <ShowContact></ShowContact> </AdminRoutes>
       },
      
     ]

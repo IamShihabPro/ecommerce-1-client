@@ -4,7 +4,9 @@ import useAdmin from '../../hooks/useAdmin';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Loader from '../Loader/Loader';
 import {  BsArrowLeftCircleFill } from 'react-icons/bs';
-import { FaBars, FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaSitemap, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaHome, FaUsers } from 'react-icons/fa';
+import {FaMessage } from 'react-icons/fa6';
+
 
 import Hexashop from '../../assets/hexa.jpg'
 
@@ -21,7 +23,7 @@ const Sidebar = () => {
   }
   
     return (
-        <div className={`${open ? 'w-72' : 'w-20'} h-screen bg-gray-800 p-4 pt-8 relative duration-300`}>
+        <div className={`${open ? 'w-64' : 'w-16'} h-screen bg-gray-800 p-4 pt-8 relative duration-300`}>
                 <BsArrowLeftCircleFill onClick={() => setOpen(!open)} className={`text-white w-6 h-6 cursor-pointer rounded-full absolute -right-2 top-9 border-2 border-gray-900 ${!open && 'rotate-180'}`}></BsArrowLeftCircleFill>
 
                 <div className='flex gap-x-4 items-center'>
@@ -37,12 +39,13 @@ const Sidebar = () => {
 
 
                             <div className='mt-10'>
-                            <Link to='/dashboard/adminhome' className={`flex rounded-md  p-4  cursor-pointer  hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaHome className='w-5 h-5'></FaHome></span> <span className={`${!open && 'scale-0'}`}>Admin Home </span></Link>
-                            <Link  to='/dashboard/addProduct' className={`flex rounded-md p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span>  <span className={`${!open && 'scale-0'}`}> Add Product </span></Link>
-                            <Link  to='/dashboard/manageproduct' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>  Manage Product </span></Link>
-                            <Link  to='/dashboard/allusers' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaUsers className='w-5 h-5'></FaUsers ></span> <span className={`${!open && 'scale-0'}`}> All Users </span ></Link>
-                            <Link  to='/dashboard/mycart' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}> My Cart </span></Link>
-                            <Link to='/' className={`flex rounded-md  p-4  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
+                            <Link to='/dashboard/adminhome' className={`flex rounded-md  p-2 my-2  cursor-pointer  hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaHome className='w-5 h-5'></FaHome></span> <span className={`${!open && 'scale-0'}`}>Admin Home </span></Link>
+                            <Link  to='/dashboard/addProduct' className={`flex rounded-md p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span>  <span className={`${!open && 'scale-0'}`}> Add Product </span></Link>
+                            <Link  to='/dashboard/manageproduct' className={`flex rounded-md  p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}>  Manage Product </span></Link>
+                            <Link  to='/dashboard/allusers' className={`flex rounded-md  p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaUsers className='w-5 h-5'></FaUsers ></span> <span className={`${!open && 'scale-0'}`}> All Users </span ></Link>
+                            <Link  to='/dashboard/mycart' className={`flex rounded-md  p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaShoppingCart className='w-5 h-5'></FaShoppingCart></span> <span className={`${!open && 'scale-0'}`}> My Cart </span></Link>
+                            <Link  to='/dashboard/contacts' className={`flex rounded-md  p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}> <span ><FaMessage className='w-5 h-5'></FaMessage></span> <span className={`${!open && 'scale-0'}`}> Contacts</span></Link>
+                            <Link to='/' className={`flex rounded-md  p-2 my-2  cursor-pointer hover:bg-teal-800 text-white text-sm items-center gap-x-4`}>  <span ><FaHome className='w-5 h-5'></FaHome> </span > <span  className={`${!open && 'scale-0'}`}>Home</span> </Link>
 
                     
                             </div>
