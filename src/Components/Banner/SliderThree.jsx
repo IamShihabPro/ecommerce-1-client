@@ -1,5 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 const SliderThree = () => {
     const {theme} = useAuth()
@@ -10,6 +12,12 @@ const SliderThree = () => {
                     <h2 className={`text-3xl text-left sm:text-4xl max-w-lg font-bold  ${theme === 'dark' ? 'text-blue-600' : 'text-red-600'}`}>Unleash Your Fashion Persona Today! </h2>
 
                     <p className={`py-4 text-left text-gray-900 max-w-lg ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Revamp your closet with the freshest fashion statements. Dive into our curated assortment of clothing, accessories, and more. Whether you're into casual chic or upscale elegance, we've got it all.</p>
+                    <div className='flex gap-4'>
+                            <button className={`group text-white w-fit flex items-center rounded-md px-6 py-3 my-2 cursor-pointer duration-200 ${theme === 'dark' ? 'bg-blue-600' : 'bg-red-600'} `}> 
+                            <Link to='Portfolio' className='flex justify-center items-center' smooth duration={500} > Projects <span className='ml-2 group-hover:rotate-90 duration-200'><FaArrowRight></FaArrowRight> </span></Link>
+                            
+                            </button>
+                    </div>
             </div>
 
             <div className='md:ml-4 -mt-10 sm:-mt-6 md:-mt-0 lg:-mt-0 xl:-mt-0 pl-2'>
