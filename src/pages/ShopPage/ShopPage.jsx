@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Container from '../../Components/Container/Container';
 import ShopCard from './ShopCard';
 import useAuth from '../../hooks/useAuth';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Loader from '../../Components/Loader/Loader';
 
 const ShopPage = () => {
     const {theme} = useAuth()
+    const {loading} = useContext(AuthContext)
     
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
@@ -17,6 +20,9 @@ const ShopPage = () => {
     // const [sizeFilter, setSizeFilter] = useState('all');
     // const [colorFilter, setColorFilter] = useState('all');
   
+    if(loading){
+        return <Loader></Loader>
+    }
 
 
     // category name of product

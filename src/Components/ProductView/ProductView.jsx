@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import Container from '../Container/Container';
 import { useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const ProductView = () => {
     const product = useLoaderData()
     const {colors, sizes} = product
     const {theme} = useAuth()
-    // console.log(colors);
+    const {loading} = useContext(AuthContext)
+
+
+
+    if(loading){
+      return <Loader></Loader>
+    }
 
     return (
         <Container>

@@ -12,6 +12,7 @@ const Nabvbar = () => {
 
     // console.log(cart.length);
 
+
   const navItems = [
     {
         id: 1,

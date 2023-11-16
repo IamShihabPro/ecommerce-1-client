@@ -8,15 +8,19 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
 import useAuth from '../../hooks/useAuth';
 import Modal from '../Modal/Modal';
+import Loader from '../Loader/Loader';
 
 const ProductData = () => {
     const {theme} = useAuth()
+
     
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
 
-    const {user} = useContext(AuthContext)
+    const {user, loading} = useContext(AuthContext)
+
+
     const navigate = useNavigate()
     const location = useLocation()
     const [refetch, isLoading] = useCart()
@@ -24,6 +28,8 @@ const ProductData = () => {
     const [itemColor, setItemColor] = useState('')
     const [itemSize, setItemSize] = useState('')
 
+
+  
 
     // category name of product
     useEffect(()=>{
@@ -126,6 +132,14 @@ const ProductData = () => {
                 setCurrentPage(currentPage - 1);
             }
         };
+
+
+
+          
+    if(loading){
+        return <Loader></Loader>
+    }
+
 
 
     return (

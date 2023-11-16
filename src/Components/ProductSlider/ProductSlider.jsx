@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Container from '../Container/Container';
 import Card from './Card';
 import useAuth from '../../hooks/useAuth';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const ProductSlider = () => {
     const {theme} = useAuth()
@@ -11,6 +13,13 @@ const ProductSlider = () => {
     const [mensProducts, setMensProducts] = useState('Mens')
     const [womensProducts, setWomensProducts] = useState('Womens')
     const [kidsProducts, setKidsProducts] = useState('Kids')
+    const {loading} = useContext(AuthContext)
+
+
+
+    if(loading){
+      return <Loader></Loader>
+    }
 
     useEffect(()=>{
         fetch(`${import.meta.env.VITE_API_URL}/products`)

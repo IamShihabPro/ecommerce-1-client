@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import Loader from '../../Components/Loader/Loader';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 
@@ -10,6 +12,13 @@ const Review = () => {
     const [review, setReview] = useState(null)
     const [hover, setHover] = useState(null)
     const {user} = useAuth()
+    const {loading} = useContext(AuthContext)
+
+
+
+    if(loading){
+      return <Loader></Loader>
+    }
 
   const [formData, setFormData] = useState({
     message: '',
