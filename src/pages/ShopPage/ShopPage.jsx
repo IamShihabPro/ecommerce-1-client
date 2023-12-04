@@ -42,18 +42,25 @@ const ShopPage = () => {
 
 
 
-    useEffect(()=>{
-        fetch(`${import.meta.env.VITE_API_URL}/products`)
-        .then(res => res.json())
-        .then(data => {
-            setProducts(data)
-        })
-    },[])
-    // console.log(products);
-
+  
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products`);
+            const result = await response.json();
+            setProducts(result);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, [])
+    
+    // console.log('products', products);
 
     const handleFilter = () => {
-        const filteredProducts = products.filter(product => {
+        const filteredProduct = products.filter(product => {
           return (
             (selectedCategory === 'All' || product.category === selectedCategory) &&
             product.price >= minPriceFilter &&
@@ -63,8 +70,9 @@ const ShopPage = () => {
             // (colorFilter === 'all' || product.color === colorFilter)
           );
         });
-    
-        return filteredProducts;
+        
+        // console.log('filteredProduct', filteredProduct);
+        return filteredProduct;
       };
     
       const filteredProducts = handleFilter();

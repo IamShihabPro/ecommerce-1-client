@@ -21,13 +21,34 @@ const ProductSlider = () => {
       return <Loader></Loader>
     }
 
-    useEffect(()=>{
-        fetch(`${import.meta.env.VITE_API_URL}/products`)
-        .then(res => res.json())
-        .then(data =>{
-            setProductSlider(data)
-        })
-    },[])
+    // useEffect(()=>{
+    //     fetch(`${import.meta.env.VITE_API_URL}/products`)
+    //     .then(res => res.json())
+    //     .then(data =>{
+    //         setProductSlider(data)
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching products:', error);
+    //     });
+    // },[productSlider])
+
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products`);
+            const result = await response.json();
+            setProductSlider(result);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, [productSlider])
+
+
 
     //  console.log(productSlider);
 

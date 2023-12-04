@@ -18,6 +18,7 @@ import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import Review from "../pages/Review/Review";
 import ShowContact from "../pages/Dashboard/ShowContact/ShowContact";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 // import ContactForm from "../pages/ContactForm/ContactForm";
 
 // import Dash from "../Layout/Dash";
@@ -27,6 +28,7 @@ import ShowContact from "../pages/Dashboard/ShowContact/ShowContact";
 export const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage></ErrorPage>,
     element: <Main></Main>,
     children: [
       {

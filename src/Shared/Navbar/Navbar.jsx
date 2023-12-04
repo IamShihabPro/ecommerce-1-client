@@ -63,7 +63,7 @@ useEffect(() => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-6'>
             <div className='flex items-center justify-between h-16'>
                 <div className=''>
-                    <h1 className='text-gray-200 font-bold text-3xl'>Hexa Shop</h1>
+                    <a href='/' className='text-gray-200 font-bold text-3xl'>Hexa Shop</a>
                 </div>
 
                 <div className='hidden md:block lg:block'>

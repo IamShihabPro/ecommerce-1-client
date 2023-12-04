@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Rating } from '@smastrom/react-rating'
@@ -16,19 +16,46 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import useAuth from '../../hooks/useAuth';
 import Container from '../../Components/Container/Container';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Loader from '../../Components/Loader/Loader';
 
 
 const ShowReview = () => {
   const {theme} = useAuth()
 
   const [reviews, setReviews] = useState([])
-  useEffect(()=>{
-      fetch(`${import.meta.env.VITE_API_URL}/reviews`)
-      .then(res => res.json())
-      .then(data => {
-        setReviews(data);
-      })
-  },[reviews])
+  const {loading} = useContext(AuthContext)
+
+          
+  if(loading){
+    return <Loader></Loader>
+  }
+
+  // useEffect(()=>{
+  //     fetch(`${import.meta.env.VITE_API_URL}/reviews`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setReviews(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching reviews:', error);
+  //   });
+  // },[reviews])
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/reviews`);
+        const result = await response.json();
+        setReviews(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [])
 
   // console.log(reviews);
 

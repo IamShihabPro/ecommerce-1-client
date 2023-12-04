@@ -20,7 +20,6 @@ const ProductData = () => {
 
     const {user, loading} = useContext(AuthContext)
 
-
     const navigate = useNavigate()
     const location = useLocation()
     const [refetch, isLoading] = useCart()
@@ -28,7 +27,11 @@ const ProductData = () => {
     const [itemColor, setItemColor] = useState('')
     const [itemSize, setItemSize] = useState('')
 
-
+ 
+          
+    if(loading){
+        return <Loader></Loader>
+    }
   
 
     // category name of product
@@ -39,7 +42,37 @@ const ProductData = () => {
             setCategories(data);
         })
     },[])
+    
 
+
+
+    // useEffect(()=>{
+    //     fetch(`${import.meta.env.VITE_API_URL}/products`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setProducts(data)
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching products:', error);
+    //     });
+    // },[products])
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/products`);
+            const result = await response.json();
+            setProducts(result);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, [])
+
+      
     //  category button dynamic
     const handleCategory = (c) => {
         console.log(c);
@@ -48,13 +81,7 @@ const ProductData = () => {
 
 
 
-    useEffect(()=>{
-        fetch(`${import.meta.env.VITE_API_URL}/products`)
-        .then(res => res.json())
-        .then(data => {
-            setProducts(data)
-        })
-    },[])
+
     // console.log(products);
 
     const filterProduct = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory)
@@ -132,14 +159,6 @@ const ProductData = () => {
                 setCurrentPage(currentPage - 1);
             }
         };
-
-
-
-          
-    if(loading){
-        return <Loader></Loader>
-    }
-
 
 
     return (
