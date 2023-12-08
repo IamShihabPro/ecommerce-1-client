@@ -190,7 +190,7 @@ const ProductForm = () => {
 
           <div className="mb-10">
       <div className="w-64">
-        <label className="block mb-1 text-sm font-bold">Select Size:</label>
+        <label className="block mb-1 text-gray-700 text-sm font-bold">Select Size:</label>
         <Select
           className='text-sm'
           options={sizeOptions}
