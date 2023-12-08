@@ -99,17 +99,17 @@ const ProductForm = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="productCategory">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="productName">
               Product Category
             </label>
             <select
               id="productCategory"
               name="productCategory"
-              className="w-full border rounded py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
+              className="w-full border rounded text-sm  py-2 px-3 focus:outline-none focus:ring focus:border-blue-300 bg-white"
               value={productCategory}
               onChange={(e) => setProductCategory(e.target.value)}
             >
-              <option value="" disabled >Select a category</option>
+              <option  value="" disabled >Select a category</option>
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
@@ -167,8 +167,11 @@ const ProductForm = () => {
 
           <div className="mb-4">
       <div className="w-64">
-        <label className="block mb-1 font-medium">Select Colors:</label>
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="productName">
+              Select Colors
+            </label>
         <Select
+          className='text-sm'
           options={colorOptions}
           isMulti
           value={colors}
@@ -187,8 +190,9 @@ const ProductForm = () => {
 
           <div className="mb-10">
       <div className="w-64">
-        <label className="block mb-1 font-medium">Select Size:</label>
+        <label className="block mb-1 text-sm font-medium">Select Size:</label>
         <Select
+          className='text-sm'
           options={sizeOptions}
           isMulti
           value={sizes}
@@ -229,7 +233,7 @@ const ProductForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full"
+          className="bg-blue-500 text-white text-sm rounded py-2 px-4 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 w-full"
         >
           Submit
         </button>
