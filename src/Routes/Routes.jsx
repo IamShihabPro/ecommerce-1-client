@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/productview/:id',
-        element: <PrivateRoutes> <ProductView></ProductView> </PrivateRoutes> ,
+        element: <ProductView></ProductView> ,
         loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/products/${params.id}`)
       },
     ]

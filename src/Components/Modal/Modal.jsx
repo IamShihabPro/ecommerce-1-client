@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useAuth from "../../hooks/useAuth";
 
 const Modal = ({product, handleAddToCart, setItemColor, setItemSize}) => {
     const {colors, sizes, name} = product
   const [showModal, setShowModal] = useState(false);
   const [productColor, setProductColor] = useState('');
   const [productSize, setProductSize] = useState('');
+
+  const {theme} = useAuth()
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -26,8 +29,7 @@ const Modal = ({product, handleAddToCart, setItemColor, setItemSize}) => {
   return (
     <>
       <button
-        className=" text-gray-800
-       px-6 py-2 mt-1 rounded shadow font-semibold outline-none focus:outline-none mb-1 hover:scale-105"
+        className={`px-6 py-2 mt-1 rounded shadow font-semibold outline-none focus:outline-none mb-1 hover:scale-105 ${theme === 'dark' ? 'text-gray-800 bg-white border' : 'text-white bg-gray-800'}`}
         type="button"
         onClick={() => setShowModal(true)}
       >
